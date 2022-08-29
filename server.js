@@ -17,6 +17,7 @@ const commentController = require('./controller/comments_controllers')
 
 // MIDDLEWARE
 app.use(methodOverride('_method'));
+app.use(express.static('public'))
 app.use('/travelhub',travelHubController )
 app.use('/comment',commentController )
 
