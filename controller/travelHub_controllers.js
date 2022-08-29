@@ -14,7 +14,7 @@ const db = require("../models");
 
 
 // index 
-router.get("/travelhub", async (req, res) => {
+router.get("/", async (req, res) => {
     try {
       const allPost = await db.Post.find();
       const context = { post: allPost };
@@ -25,9 +25,6 @@ router.get("/travelhub", async (req, res) => {
       res.redirect("/404");
     }
   });
-
-
-
 
 
 
