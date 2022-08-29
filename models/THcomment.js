@@ -1,3 +1,4 @@
+
 const mongoose = require('mongoose');
 const Posts = require('./travelHub_model');
 //const comments = require('./comment_model');
