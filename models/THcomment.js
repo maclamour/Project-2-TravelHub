@@ -1,12 +1,16 @@
 const mongoose = require('mongoose');
+const Posts = require('./travelHub_model');
 //const comments = require('./comment_model');
 
 const commentSchema = new mongoose.Schema({
-    body: String,
-    post:mongoose.Types.ObjectId,
-    ref:"Post",
+    content:{
+        body: String,
+    },
+    Posts: {
+    type: mongoose.Types.ObjectId,
+    ref: "Posts",
 },
-
+},
 {timestamps: true},
 
 );
