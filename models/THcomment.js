@@ -9,7 +9,7 @@ const commentSchema = new mongoose.Schema({
 
 );
 
-const Post = mongoose.model('Comment',commentSchema);
+const Comment = mongoose.model('Comment',commentSchema);
 
 module.exports = Comment;
 
