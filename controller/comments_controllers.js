@@ -1,8 +1,6 @@
-const mongoose = require('mongoose');
-require('dotenv').config();
+
 const express = require("express");
 const router = express.Router();
-
 
 
 //MIDDLEWARE
@@ -11,6 +9,8 @@ router.use(express.urlencoded({ extended: false }));
 
 // MODELS IMPORT
 const db = require("../models");
+
+
 
 
 
