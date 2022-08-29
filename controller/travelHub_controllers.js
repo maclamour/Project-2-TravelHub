@@ -13,6 +13,19 @@ router.use(express.urlencoded({ extended: false }));
 const db = require("../models");
 
 
+// index 
+router.get("/travelhub", async (req, res) => {
+    try {
+      const allPost = await db.Post.find();
+      const context = { post: allPost };
+      // console.log(allPost)
+      res.render("index.ejs", context);
+    } catch (err) {
+      console.log(err);
+      res.redirect("/404");
+    }
+  });
+
 
 
 
