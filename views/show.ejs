@@ -1,26 +1,59 @@
 
 
+ <section>
+    <div class="container">
+    <!-- 1 div in the middle of the page that displays posts created -->
+    <div style="margin:100px" class="post-container">
+        <!-- <div class="row justify-content-center"> -->
+        <div class="col-4">
+            <div class="card">
+                <div class="card-body">
+                    <div>
+                        <!-- for-loop for posts-->
+                        
+                                <div>
+                                <h2 class="title">Post: <%=post.title%></h2>
+                                
+                                <%=post.subject%>
+                                <%=post.body%>
+                                <%=post.date%>
+                                
+                        
+                        
+                            </div>
+                            <div>
+                                <p class="control">
+                                    <form action="/travelhub/<%= post.id %>?_method=DELETE" method="POST">
+                                            <input class="btn btn-danger" type="submit" value="Delete Post"/>                    
+                                    </form>
+                                </p>
+                        
+                            </div>
+                        
+                            <div>
+                                <button><a href="/travelhub/<%=id%>/edit">Edit Post</a></button>
+                            </div>
+                        
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="make-comment">
+        <form>
+            <div class="form-group">
+              <label for="exampleFormControlTextarea1"></label> 
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="what are your thoughts?"></textarea>
+            </div>
+          </form>
+    </div>
+    <div class="previous-comments">
+
+    </div>
+</div>
+</section>
+
+
 <section>
-    <div>
-        <h2 class="title">Post: <%=post.title%></h2>
-        
-        <%=post.subject%>
-        <%=post.body%>
-        <%=post.date%>
-        
+    
 
-
-    </div>
-
-    <div>
-        <p class="control">
-            <form action="/travelhub/<%= post.id %>?_method=DELETE" method="POST">
-                    <input class="btn btn-danger" type="submit" value="Delete Post"/>                    
-            </form>
-        </p>
-
-    </div>
-
-    <div>
-        <a href="/travelhub/<%=id%>/edit">Edit Post</a>
-    </div>
+   
