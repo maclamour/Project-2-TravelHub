@@ -76,7 +76,7 @@ router.put('/:id', async (req, res, next)=>{
     try{
         const updatedComment = await db.Comment.findByIdAndUpdate(req.params.id, req.body, {new:true})
         //console.log(updatedComment)
-        res.redirect(`/products/${updatedComment.post}`)
+        res.redirect(`/post/${updatedComment.post}`)
     }catch(err){
        //console.log(err)
        next()
