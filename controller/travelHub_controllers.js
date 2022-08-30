@@ -104,7 +104,7 @@ router.put("/:id", async (req, res) => {
       new: true,
     });
 
-    res.redirect(`/${req.params.id}`);
+    res.redirect(`/travelhub/${req.params.id}`);
   } catch (err) {
     console.log(err);
     res.redirect("/404");
