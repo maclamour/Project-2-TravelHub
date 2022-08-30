@@ -2,8 +2,18 @@
 
 <section>
     <div>
-        <h2 class="title">Post: <%=post.title%>
-        </h2>
+        <h2 class="title">Post: <%=post.title%></h2>
+        
+
+
+    </div>
+
+    <div>
+        <p class="control">
+            <form action="/travelhub/<%= post.id %>?_method=DELETE" method="POST">
+                    <input class="btn btn-danger" type="submit" value="Delete Post"/>                    
+            </form>
+        </p>
 
     </div>
 
