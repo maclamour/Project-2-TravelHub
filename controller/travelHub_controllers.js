@@ -13,7 +13,28 @@ router.use(express.urlencoded({ extended: false }));
 const db = require("../models");
 
 
-// index 
+//new route
+router.get("/new", (req, res) => {
+    res.render("new.ejs");
+  });
+  // create route 
+router.post("/", async (req, res) => {
+    const createdPost = req.body;
+    // post.push(createdPost);
+    try {
+      const newProduct = await db.Product.create(createdPost);
+  
+      // console.log(newProduct);
+  
+      res.redirect(`/products`);
+    } catch (err) {
+      console.log(err);
+      res.redirect("/404");
+      // throw new Error(err);
+    }
+  });
+
+// index route
 router.get("/", async (req, res) => {
     try {
       const allPost = await db.Post.find();
