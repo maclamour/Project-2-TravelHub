@@ -52,7 +52,7 @@ router.post('/', async (req, res, next) => {
         // res.send(req.body)
         const newComment = await db.Comment.create(req.body)
         //console.log(newComment)
-        res.redirect(`/travelhub/${newComment.post}`)
+        res.render('show.ejs')
     }catch(err){
        //console.log(err)
        next()
