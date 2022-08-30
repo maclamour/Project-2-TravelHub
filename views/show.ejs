@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="en">
 <section>
     <div class="container d-flex align-content-start flex-wrap"
         style="width: 500px; background-color: rgba(160, 226, 197, 0.349)" ;>
@@ -73,25 +75,6 @@
             </div>
 </section>
 
-<!-- comments -->
-<div style="margin:100px" class="comments-container">
-    <div class="col-4">
-        <div class="card">
-            <div class="card-body">
-                <div>
-                    <!-- for-loop for comments-->
-                    <ul>
-                        <% for(let i=0; i<Comment.length; i++){ %>
-                            <% let singleComment=Comment[i]; %>
-                                <li>
-                                    <div style="overflow:scroll"class="card-header">t/SummerTravel |<a
-                                            href="/travelhub/<%= singlePost._id %>">
-                                            <%= singleComment.body %> </a>
-                                </li>
-                </div>
-                <% } %>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
+<%include('./partials/comment/show.ejs')%>
+
+</html>
