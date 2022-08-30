@@ -26,7 +26,7 @@ router.post("/", async (req, res) => {
   
       // console.log(newPost);
   
-      res.redirect(`/`);
+      res.redirect(`/travelhub`);
     } catch (err) {
       console.log(err);
       res.redirect("/404");
