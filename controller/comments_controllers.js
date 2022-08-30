@@ -27,7 +27,7 @@ router.get('/', async (req, res, next) => {
 router.get('/:id/', async (req, res, next) => {
     try{
         const foundComment = await db.Comment.findById(req.params.id).populate('post').exec()
-        res.render('comment/show.ejs', {comment: foundComment})
+        res.render('show.ejs', {comment: foundComment})
     }catch(err){
        console.log(err)
        next()
