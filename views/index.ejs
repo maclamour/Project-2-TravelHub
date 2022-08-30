@@ -21,10 +21,12 @@
                                     <% for(let i=0; i<post.length; i++){ %>
                                         <% let singlePost=post[i]; %>
                                             <li>
-                                                <div class="card-header">t/SummerTravel |<a
+                                                <div style="overflow:scroll"class="card-header">t/SummerTravel |<a
                                                         href="/travelhub/<%= singlePost._id %>">
-                                                        <%= singlePost.title %>
-                                                    </a>
+                                                        <%= singlePost.title %> </a>
+                                                        <%= singlePost.body %>
+                                                    
+                                                    
                                             </li>
                             </div>
                             <% } %>
