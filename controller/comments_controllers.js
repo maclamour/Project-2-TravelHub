@@ -11,7 +11,7 @@ router.use(express.urlencoded({ extended: false }));
 const db = require("../models");
 
 
-// get all reviews route
+// get all comment route
 router.get('/', async (req, res, next) => {
     try{
         const allComment = await db.Comment.find().populate('post').exec()
@@ -27,7 +27,7 @@ router.get('/', async (req, res, next) => {
 router.get('/:id/', async (req, res, next) => {
     try{
         const foundComment = await db.Comment.findById(req.params.id).populate('post').exec()
-        res.render('reviews/show.ejs', {comment: foundComment})
+        res.render('comment/show.ejs', {comment: foundComment})
     }catch(err){
        console.log(err)
        next()
