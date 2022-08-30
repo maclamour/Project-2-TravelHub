@@ -1,59 +1,97 @@
+<section>
+    <div class="container d-flex align-content-start flex-wrap"
+        style="width: 500px; background-color: rgba(160, 226, 197, 0.349)" ;>
 
-
- <section>
-    <div class="container">
-    <!-- 1 div in the middle of the page that displays posts created -->
-    <div style="margin:100px" class="post-container">
-        <!-- <div class="row justify-content-center"> -->
-        <div class="col-4">
-            <div class="card">
-                <div class="card-body">
-                    <div>
-                        <!-- for-loop for posts-->
-                        
-                                <div>
-                                <h2 class="title">Post: <%=post.title%></h2>
-                                
-                                <%=post.subject%>
-                                <%=post.body%>
-                                <%=post.date%>
-                                
-                        
-                        
-                            </div>
+        <div style="margin:100px" class="post-container">
+            <!-- <div class="row justify-content-center"> -->
+            <div class="col-7">
+                <div class="card">
+                    <div class="card-body">
+                        <div>
                             <div>
+                                <h2 class="title">Post: <%=post.title%>
+                                </h2>
+                                <p>Subject:<%=post.subject%></p>
+                                
+                                <p>Body:<%=post.body%></p>
+                                
+                                <p>Date:<%=post.date%></p>
+                                
+                            </div>
+                                <form>
+                                        <label for="exampleFormControlTextarea1"></label>
+                                        <textarea class="form-control mh-100"
+                                            style="background-color: rgba(0,0,255,0.1);"
+                                            id="exampleFormControlTextarea1" rows="3"
+                                            placeholder="edit post here"></textarea>
+                                </form>
+                            <div class="row align-items-end">  
+                            <div class="form-group col-5 col-md-5 ">
                                 <p class="control">
-                                    <form action="/travelhub/<%= post.id %>?_method=DELETE" method="POST">
-                                            <input class="btn btn-danger" type="submit" value="Delete Post"/>                    
-                                    </form>
+                                <form action="/travelhub/<%= post.id %>?_method=DELETE" method="POST">
+                                    <input class="btn btn-danger" type="submit" value="Delete Post" />
+                                </form>
                                 </p>
-                        
                             </div>
-                        
-                            <div>
+                            <div class="form-group col-5 col-md-5 ">
                                 <button><a href="/travelhub/<%=id%>/edit">Edit Post</a></button>
                             </div>
-                        
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="make-comment">
-        <form>
-            <div class="form-group">
-              <label for="exampleFormControlTextarea1"></label> 
-              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="what are your thoughts?"></textarea>
-            </div>
-          </form>
-    </div>
-    <div class="previous-comments">
-
-    </div>
 </div>
 </section>
-
-
 <section>
-    
+<div class="container d-flex align-content-start flex-wrap"
+        style="width: 500px; background-color: rgba(182, 160, 198, 0.349)" ;>
 
-   
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-body">
+                        <div>
+                            <div>
+                                <p>Date:<%=post.date%></p>
+                            </div>
+                            <!-- comment -->
+                                <form action="/travelhub/show" method="POST">
+                                        <label for="exampleFormControlTextarea1"></label>
+                                        <textarea class="form-control mh-100" type="text" name="body" id="exampleFormControlTextarea1" rows="3" placeholder="what are your thoughts"></textarea>
+                                        <button>Submit Comment</button>
+                                </form>
+                                <!-- delete -->
+                                <form action="/travelhub/<%= post.id %>?_method=DELETE" method="POST">
+                                    <input class="btn btn-danger" type="submit" value="Delete Post" />
+                                </form>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+</section>
+
+<!-- comments -->
+<div style="margin:100px" class="comments-container">
+    <div class="col-4">
+        <div class="card">
+            <div class="card-body">
+                <div>
+                    <!-- for-loop for comments-->
+                    <ul>
+                        <% for(let i=0; i<Comment.length; i++){ %>
+                            <% let singleComment=Comment[i]; %>
+                                <li>
+                                    <div style="overflow:scroll"class="card-header">t/SummerTravel |<a
+                                            href="/travelhub/<%= singlePost._id %>">
+                                            <%= singleComment.body %> </a>
+                                </li>
+                </div>
+                <% } %>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
