@@ -1,9 +1,9 @@
 body{
     background-color: rgb(255, 205, 233);
-    display: flex;
-    align-items: center;
+    
 }
 
-.post-container{
-    
+.post-container {
+    display: flex;
+    align-items: center;
 }
