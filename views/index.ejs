@@ -10,7 +10,7 @@
 
         <section>
             <!-- 1 div in the middle of the page that displays posts created -->
-            <div class="post-container">
+            <div style="margin:100px" class="post-container">
                 <!-- <div class="row justify-content-center"> -->
                 <div class="col-4">
                     <div class="card">
@@ -21,19 +21,17 @@
                                     <% for(let i=0; i<post.length; i++){ %>
                                         <% let singlePost=post[i]; %>
                                             <li>
-                                                <div class="card-header">r/SummerTravel |<a
+                                                <div class="card-header">t/SummerTravel |<a
                                                         href="/travelhub/<%= singlePost._id %>">
+                                                        <%= singlePost.title %>
+                                                    </a>
                                             </li>
-                                            <%= singlePost.title %>
-                                                </a>
                             </div>
-
                             <% } %>
-                                </ul>
+                            </ul>
                         </div>
                     </div>
                 </div>
-                <!-- </div> -->
             </div>
         </section>
     </body>
