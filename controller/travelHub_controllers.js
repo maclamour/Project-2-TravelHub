@@ -75,7 +75,7 @@ router.get("/", async (req, res) => {
         product: req.params.id,
       });
       // console.log(foundPost,foundComment)
-      return res.redirect("/");
+      return res.redirect("/travelhub");
     } catch (err) {
       // throw new Error(err)
       console.log(err);
