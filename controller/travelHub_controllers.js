@@ -43,7 +43,7 @@ router.post("/", async (req, res) => {
       res.render("show.ejs", {
         post: foundPost,
         id: foundPost._id,
-        Comment: foundComment,
+        comment: foundComment,
       });
     } catch (err) {
       //console.log(err);
