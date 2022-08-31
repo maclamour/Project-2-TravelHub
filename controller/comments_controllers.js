@@ -1,5 +1,6 @@
 
 const express = require("express");
+const { Post } = require("../models");
 const router = express.Router();
 
 
@@ -43,6 +44,8 @@ router.post('/', async (req, res, next) => {
     try{
         // res.send(req.body)
         const newComment = await db.Comment.create(req.body)
+        // const id = req.params.id
+        // newComment.push[{}]
         //push new comment into a post
         console.log(newComment)
         res.redirect(`/travelhub/${newComment.post}`)
