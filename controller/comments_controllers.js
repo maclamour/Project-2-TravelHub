@@ -17,7 +17,7 @@ router.get('/', async (req, res, next) => {
         const allComment = await db.Comment.find().populate('post').exec()
         const allPost = await db.Post.find()
         // res.render('comment/show.ejs', {comments: allComment, posts: allPost})
-        res.render('testing.ejs', {comments: allComment, posts: allPost})
+        res.render('show.ejs', {comments: allComment, posts: allPost})
         
     }catch(err){
        console.log(err)
