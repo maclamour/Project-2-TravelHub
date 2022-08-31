@@ -1,5 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+</head>
+
+
+<h1>Hello World</h1>
+</html>
+
+
+<!-- const comments = {oneComment: newComment} -->
 
 <section>
     <div class="container d-flex align-content-start flex-wrap"
@@ -9,14 +23,21 @@
                 <div class="card-body">
                     <div>
                         <!-- comment -->
-                        <form action="/travelhub/<%= post.id %>?_method=DELETE" method="POST">
+                        <form action="/travelhub/<%=comment.post._id%>"?_method="DELETE" method="POST">
                             <input class="btn btn-danger" type="submit" value="Delete Post" />
                         </form>
-                        <form action="/travelhub/<%=post.id%>" method="POST">
-                            <label for="exampleFormControlTextarea1"></label>
-                            <textarea class="form-control mh-100" type="text" name="body"
-                                id="exampleFormControlTextarea1" rows="3"
-                                placeholder="what are your thoughts"></textarea>
+                        <a href="/travelhub/<%=comment.post._id%>"> <%=comment.post.title%></a>
+                        /travelhub/postID/newComment
+                        <form action="/comment" method="POST">
+                            <label for="content"></label>
+                            <textarea 
+                                class="form-control mh-100" 
+                                type="text" 
+                                name="content"
+                                rows="3"
+                                placeholder="what are your thoughts"
+                                >
+                            </textarea>
                             <button>Submit Comment</button>
                         </form>
                         <!-- delete -->
@@ -36,10 +57,10 @@
 
                     <!-- for-loop for comments-->
                     <ul>
-                        <% for(let i=0; i<Comment.length; i++){ %>
-                            <% let singleComment=Comment[i]; %>
+                        <% for(let i=0; i<comments.length; i++){ %>
+                            <% let singleComment=comments[i]; %>
                                 <li>
-                                    <div style="overflow:scroll" class="card-header">t/SummerTravel |<%= singleComment.body %>></div>
+                                    <div style="overflow:scroll" class="card-header">t/SummerTravel |<%= singleComment.content%></div>
                                     
                                 </li>
 
