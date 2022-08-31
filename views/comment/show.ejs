@@ -24,7 +24,7 @@
                         </form>
                         
                      
-                        <form action="/comment/" method="POST">
+                        <form action="/comment/<%=postId%> " method="POST">
                             <label for="content"></label>
                             <textarea 
                                 class="form-control mh-100" 
@@ -34,6 +34,7 @@
                                 placeholder="what are your thoughts"
                                 >
                             </textarea>
+                            <input type="hidden" value="<%=postId%>" name="post">
                             <button>Submit Comment</button>
                         </form>
                         <!-- delete -->

@@ -40,17 +40,20 @@ router.get('/:id/', async (req, res, next) => {
 
 // create route 
 //localhost:4000/travelhub/:id/
-router.post('/', async (req, res, next) => {
+router.post('/:id', async (req, res, next) => {
     try{
-        // res.send(req.body)
+         //res.send(req.body)
         const newComment = await db.Comment.create(req.body)
+        const post = await db.Post.findById(newComment.post)
+        post.comment.push(newComment.id)
+        await post.save()
         // const id = req.params.id
         // newComment.push[{}]
         //push new comment into a post
-        console.log(newComment)
+       // console.log(newComment)
         res.redirect(`/travelhub/${newComment.post}`)
     }catch(err){
-       //console.log(err)
+       console.log(err)
        next()
     }
 
