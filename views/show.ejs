@@ -50,6 +50,12 @@
                                 <div class="form-group col-5 col-md-5 ">
                                     <button><a href="/travelhub/<%=id%>/edit">Edit Post</a></button>
                                 </div>
+                                <h2>Comments Section</h2>
+                                <li><%comment.forEach(comments=> {%>
+                                    <p><%=comments.content%></p>
+                                    <li><a href="/travelhub/<%=comments._id%>"><%=comments.content%></a></li>
+                                    <%})%>
+                                </li>
                             </div>
                         </div>
                     </div>
@@ -59,65 +65,7 @@
     </div>
 </section>
 
+<%-include('../views/comment/show.ejs')%>
 
-<!-- comment box -->
-<section>
-    <div class="container d-flex align-content-start flex-wrap"
-        style="width: 500px; background-color: rgba(182, 160, 198, 0.349)" ;>
-        <div class="col-4">
-            <div class="card">
-                <div class="card-body">
-                    <div>
-                        <!-- delete -->
-                        <form action="/travelhub/<%=post._id%>"?_method="DELETE" method="POST">
-                            <input class="btn btn-danger" type="submit" value="Delete Post" />
-                        </form>
-
-
-                        <a href="/travelhub/<%=post._id%>"> <%=post.title%></a>
-                        <!-- /travelhub/postID/newComment -->
-                        <form action="/travelhub/<%=post._id%>" method="POST">
-                            <label for="content"></label>
-                            <textarea 
-                                class="form-control mh-100" 
-                                type="text" 
-                                name="content"
-                                rows="3"
-                                placeholder="what are your thoughts"
-                                >
-                            </textarea>
-                            <button>Submit Comment</button>
-                        </form>
-                        <!-- delete -->
-                        
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- comments posted-->
-    <div style="margin:100px" class="comments-container">
-        <div class="col-4">
-            <div class="card">
-                <div class="card-body">
-
-                    <!-- for-loop for comments-->
-                    <ul>
-                        <% for(let i=0; i<comments.length; i++){ %>
-                            <% let singleComment=comments[i]; %>
-                                <li>
-                                    <div style="overflow:scroll" class="card-header">t/SummerTravel |<%= singleComment.content%></div>
-                                    
-                                </li>
-
-                                <% } %>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-</body>
 </html>
+
