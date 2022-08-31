@@ -19,14 +19,14 @@ const commentController = require('./controller/comments_controllers')
 app.use(methodOverride('_method'));
 app.use(express.static('public'))
 app.use('/travelhub',travelHubController )
-app.use('/travelhub',commentController )
+app.use('/comment',commentController )
 
 
 
 
 
 // 404 Wildcard Route
-app.get('/*'),((req,res)=>{
+app.get('/*',(req,res)=>{
     res.render('404')
 })
 

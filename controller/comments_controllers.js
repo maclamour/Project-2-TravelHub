@@ -17,7 +17,7 @@ router.get('/', async (req, res, next) => {
         const allComment = await db.Comment.find().populate('post').exec()
         const allPost = await db.Post.find()
         // res.render('comment/show.ejs', {comments: allComment, posts: allPost})
-        res.render('show.ejs', {comments: allComment, posts: allPost})
+        res.render('comment/index.ejs', {comments: allComment, posts: allPost})
         
     }catch(err){
        console.log(err)
@@ -43,10 +43,9 @@ router.post('/', async (req, res, next) => {
     try{
         // res.send(req.body)
         const newComment = await db.Comment.create(req.body)
-        const context = {comments: newComment,}
         //push new comment into a post
-        console.log(context)
-        res.redirect('/:id/comment', context)
+        console.log(newComment)
+        res.redirect(`/travelhub/${newComment.post}`)
     }catch(err){
        //console.log(err)
        next()
