@@ -1,0 +1,50 @@
+<div style="margin:100px" class="comments-container">
+    <div class="col-4">
+        <div class="card">
+            <div class="card-body">
+
+                
+                <main class="container">
+                <!-- for-loop for comments-->
+                <ul>
+                    <% for(let i=0; i<comments.length; i++){ %>
+                        <% let singleComment=comments[i]; %>
+                            <li>
+                                <div style="overflow:scroll" class="card-header">t/SummerTravel |<%= singleComment.content%></div>
+                                <p><%=singleComment.content%></p>
+                            </li>
+
+                            <% } %>
+
+                            
+                </ul>
+            </div>
+            <div>
+            <form action="/comment" method="POST">
+                <label for="content"></label>
+                <textarea 
+                    class="form-control mh-100" 
+                    type="text" 
+                    name="content"
+                    rows="3"
+                    placeholder="what are your thoughts"
+                    >
+                </textarea>
+                <button>Submit Comment</button>
+            </div>
+            
+            <label for ="commentSelect"> Comment</label>
+        <div>
+            <%for(let i = 0; i < comments.length; i++) {%>
+                <%const firstComment = comments[i].content%>
+                <option value="<%post._id%>"> <%post.title%> </option>
+                <%}%>
+                <p><%=firstComment%></p>
+        </div>
+        <input type="submit" value="Create Comment"/>
+
+            </form>
+        </main>
+        </div>
+    </div>
+</div>

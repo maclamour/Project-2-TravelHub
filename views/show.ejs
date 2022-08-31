@@ -1,5 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SET NAME HERE</title>
+    <link rel="stylesheet" href="styles/main.css" />
+    <script src = 'scripts/app.js' defer></script>
+</head>
+<body>
+    
 
 <section>
     <div class="container d-flex align-content-start flex-wrap"
@@ -40,6 +50,12 @@
                                 <div class="form-group col-5 col-md-5 ">
                                     <button><a href="/travelhub/<%=id%>/edit">Edit Post</a></button>
                                 </div>
+                                <h2>Comments Section</h2>
+                                <li><%comment.forEach(comments=> {%>
+                                    <p><%=comments.content%></p>
+                                    <li><a href="/travelhub/<%=comments._id%>"><%=comments.content%></a></li>
+                                    <%})%>
+                                </li>
                             </div>
                         </div>
                     </div>
@@ -49,6 +65,7 @@
     </div>
 </section>
 
+<%-include('../views/comment/show.ejs')%>
 
-<%-include('./partials/comment/show.ejs')%>
 </html>
+
