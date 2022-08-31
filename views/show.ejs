@@ -50,6 +50,12 @@
                                 <div class="form-group col-5 col-md-5 ">
                                     <button><a href="/travelhub/<%=id%>/edit">Edit Post</a></button>
                                 </div>
+                                <h2>Comments Section</h2>
+                                <li><%comment.forEach(comments=> {%>
+                                    <p><%=comments.content%></p>
+                                    <li><a href="/travelhub/<%=comments._id%>"><%=comments.content%></a></li>
+                                    <%})%>
+                                </li>
                             </div>
                         </div>
                     </div>
