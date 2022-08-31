@@ -19,7 +19,7 @@ const commentController = require('./controller/comments_controllers')
 app.use(methodOverride('_method'));
 app.use(express.static('public'))
 app.use('/travelhub',travelHubController )
-app.use('/comment',commentController )
+app.use('/travelhub',commentController )
 
 
 

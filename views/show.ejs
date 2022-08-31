@@ -1,5 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SET NAME HERE</title>
+    <link rel="stylesheet" href="styles/main.css" />
+    <script src = 'scripts/app.js' defer></script>
+</head>
+<body>
+    
 
 <section>
     <div class="container d-flex align-content-start flex-wrap"
@@ -50,5 +60,64 @@
 </section>
 
 
-<%-include('partials/comment/show')%>
+<!-- comment box -->
+<section>
+    <div class="container d-flex align-content-start flex-wrap"
+        style="width: 500px; background-color: rgba(182, 160, 198, 0.349)" ;>
+        <div class="col-4">
+            <div class="card">
+                <div class="card-body">
+                    <div>
+                        <!-- delete -->
+                        <form action="/travelhub/<%=post._id%>"?_method="DELETE" method="POST">
+                            <input class="btn btn-danger" type="submit" value="Delete Post" />
+                        </form>
+
+
+                        <a href="/travelhub/<%=post._id%>"> <%=post.title%></a>
+                        <!-- /travelhub/postID/newComment -->
+                        <form action="/travelhub/<%=post._id%>" method="POST">
+                            <label for="content"></label>
+                            <textarea 
+                                class="form-control mh-100" 
+                                type="text" 
+                                name="content"
+                                rows="3"
+                                placeholder="what are your thoughts"
+                                >
+                            </textarea>
+                            <button>Submit Comment</button>
+                        </form>
+                        <!-- delete -->
+                        
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- comments posted-->
+    <div style="margin:100px" class="comments-container">
+        <div class="col-4">
+            <div class="card">
+                <div class="card-body">
+
+                    <!-- for-loop for comments-->
+                    <ul>
+                        <% for(let i=0; i<comments.length; i++){ %>
+                            <% let singleComment=comments[i]; %>
+                                <li>
+                                    <div style="overflow:scroll" class="card-header">t/SummerTravel |<%= singleComment.content%></div>
+                                    
+                                </li>
+
+                                <% } %>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
 </html>

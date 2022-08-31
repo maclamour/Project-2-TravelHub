@@ -9,10 +9,6 @@
 </head>
 
 
-<h1>Hello World</h1>
-</html>
-
-
 <!-- const comments = {oneComment: newComment} -->
 
 <section>
@@ -23,7 +19,7 @@
                 <div class="card-body">
                     <div>
                         <!-- comment -->
-                        <form action="/comment/<%=comments.id%>?_method=DELETE" method="POST">
+                        <form action="/travelhub/<%=comment.post._id%>"?_method="DELETE" method="POST">
                             <input class="btn btn-danger" type="submit" value="Delete Post" />
                         </form>
                         <a href="/travelhub/<%=comment.post._id%>"> <%=comment.post.title%></a>
