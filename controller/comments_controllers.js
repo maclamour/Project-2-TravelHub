@@ -16,23 +16,24 @@ router.get('/', async (req, res, next) => {
     try{
         const allComment = await db.Comment.find().populate('post').exec()
         const allPost = await db.Post.find()
-        res.render('comment/show.ejs', {comments: allComment, posts: allPost})
+        // res.render('comment/show.ejs', {comments: allComment, posts: allPost})
+        res.render('testing.ejs', {comments: allComment, posts: allPost})
     }catch(err){
        console.log(err)
        next()
     }
 });
 
-//show route
-router.get('/:id/', async (req, res, next) => {
-    try{
-        const foundComment = await db.Comment.findById(req.params.id).populate('post').exec()
-        res.render('show.ejs', {comment: foundComment})
-    }catch(err){
-       console.log(err)
-       next()
-    }
-})
+// //show route
+// router.get('/:id/', async (req, res, next) => {
+//     try{
+//         const foundComment = await db.Comment.findById(req.params.id).populate('post').exec()
+//         res.render('show.ejs', {comment: foundComment})
+//     }catch(err){
+//        console.log(err)
+//        next()
+//     }
+// })
 
 
 // edit route 
@@ -51,9 +52,9 @@ router.post('/', async (req, res, next) => {
     try{
         // res.send(req.body)
         const newComment = await db.Comment.create(req.body)
-        const comments = {oneComment: newComment}
-        //console.log(newComment)
-        res.send('testing.ejs', comments)
+        const comments = {oneComment: newComment,commentID: newComment.id}
+        console.log(comments)
+        res.render('testing.ejs', comments)
     }catch(err){
        //console.log(err)
        next()
