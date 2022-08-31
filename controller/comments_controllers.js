@@ -25,6 +25,30 @@ router.get('/', async (req, res, next) => {
 });
 
 
+// //show route
+// router.get('/:id/', async (req, res, next) => {
+//     try{
+//         const foundComment = await db.Comment.findById(req.params.id).populate('post').exec()
+//         res.render('show.ejs', {comment: foundComment})
+//     }catch(err){
+//        console.log(err)
+//        next()
+//     }
+// })
+
+
+// edit route 
+// router.get('/:id/edit', async (req,res, next)=>{
+//     try{
+//         const foundComment = await db.Comment.findById(req.params.id).populate('post').exec()
+//         res.render('comment/edit.ejs', {comment: foundComment})
+//     }catch(err){
+//        console.log(err)
+//        next()
+//     }
+// })
+
+
 // create route 
 router.post('/', async (req, res, next) => {
     try{
@@ -52,17 +76,17 @@ router.delete('/:id', async (req,res, next)=>{
 })
 
 // update route
-router.put('/:id', async (req, res, next)=>{
-    try{
-        const updatedComment = await db.Comment.findByIdAndUpdate(req.params.id, req.body, {new:true})
-        //console.log(updatedComment)
-        res.redirect(`/post/${updatedComment.post}`)
-    }catch(err){
-       //console.log(err)
-       next()
-    }
+// router.put('/:id', async (req, res, next)=>{
+//     try{
+//         const updatedComment = await db.Comment.findByIdAndUpdate(req.params.id, req.body, {new:true})
+//         //console.log(updatedComment)
+//         res.redirect(`/post/${updatedComment.post}`)
+//     }catch(err){
+//        //console.log(err)
+//        next()
+//     }
 
-})
+// })
 
 
 
