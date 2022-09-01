@@ -4,13 +4,9 @@ const Posts = require('./travelHub_model');
 //const comments = require('./comment_model');
 
 const commentSchema = new mongoose.Schema({
-    content:{
-        body: String,
-    },
-    Posts: {
-    type: mongoose.Types.ObjectId,
-    ref: "Posts",
-},
+    content: String,
+    post: {type: mongoose.Types.ObjectId,ref: "Post"},
+    
 },
 {timestamps: true},
 

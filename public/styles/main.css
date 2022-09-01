@@ -1,7 +1,12 @@
-body{
-    background-color: rgb(255, 205, 233);
-}
 
-.post-container {
-    
+body {
+    display: flex;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    color: #212529;
+    padding: 10%;
+    justify-items: center;
+    align-items: center;
 }

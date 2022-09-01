@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include( 'partials/nav.ejs' ) %>
+<body>
+<form action="/travelhub/<%=post._id%>?_method=PUT" method="POST">
+  
+  <div>
+    <label>Title</label>
+    <input
+      class="input-title"
+      type="text"
+      placeholder="title here"
+      name="name"
+      value="<%= post.title %>"
+    />
+  </div>
+
+
+<div>
+  <label>Subject</label>
+    <input
+      class="input-subject"
+      type="text"
+      placeholder="subject"
+      name="subject"
+      value="<%= post.subject %>"
+    />
+  </div>
+</div>
+
+<div>
+  
+  <div class="control">
+    <label>Body</label>
+    <textarea
+      class="input-body"
+      rows="5" 
+      cols="60"
+      name="body"
+      value="<%= post.body %> "
+    ></textarea>
+  </div>
+</div>
+
+    <div>
+ <input type="submit" value="Edit Post">
+    </div>
+</div>
+
+</form>
+</body>
+<style>
+
+
+</style>
+</html>
+

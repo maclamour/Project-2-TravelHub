@@ -26,7 +26,7 @@ app.use('/comment',commentController )
 
 
 // 404 Wildcard Route
-app.get('*', (req,res)=>{
+app.get('/*',(req,res)=>{
     res.render('404')
 })
 

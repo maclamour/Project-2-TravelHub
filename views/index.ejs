@@ -1,43 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <!-- head -->
+<!-- head -->
 
-    <%- include( 'partials/nav.ejs' )  %>
-    
+<%-include('partials/nav.ejs')%>
 
-<body>
 
-    <section>
-        <!-- 1 div in the middle of the page that displays posts created -->
-        <div class="post-container">
-            <!-- <div class="row justify-content-center"> -->
+    <body>
+
+        <section>
+            <!-- 1 div in the middle of the page that displays posts created -->
+            <div style="margin:100px" class="post-container">
+                <!-- <div class="row justify-content-center"> -->
                 <div class="col-4">
                     <div class="card">
                         <div class="card-body">
-                            <div>
-                                <!-- for-loop for posts-->
-                                <ul>
-                                    <% for(let i=0; i<post.length; i++){ %>
-                                        <% let singlePost=post[i]; %>
-                                            <li>
-                                                <div class="card-header">r/SummerTravel |<a
-                                                        href="/travelhub/<%= singlePost._id %>">
-                                            </li>
-                                            <%= singlePost.title %>
+                            <!-- for-loop for posts-->
+                            <ul style="list-style-type: none";>
+                                <% for(let i=0; i<post.length; i++){ %>
+                                    <% let singlePost=post[i]; %>
+                                        <li>
+                                            <div style="overflow:hidden" class="card-header">t/SummerTravel |<a
+                                                    href="/travelhub/<%= singlePost._id %>">
+                                                    <%= singlePost.title %>
                                                 </a>
-                            </div>
-
-                            <% } %>
-                                </ul>
+                                                <%= singlePost.body %>
+                                            </div>
+                                        </li>
+                                        <% } %>
+                            </ul>
                         </div>
                     </div>
                 </div>
-            <!-- </div> -->
-        </div>
-        </div>
-
-    </section>
-</body>
+            </div>
+        </section>
+    </body>
 
 </html>
