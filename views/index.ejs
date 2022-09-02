@@ -5,35 +5,29 @@
 
 <%-include('partials/nav.ejs')%>
 <body>
-
     <section>
-
-        <div class="container ">
-            <div class="row">
-                <div class="col-md-4">
-                    <% post.forEach(post=> { %>
-                        <div class="card pt-2 my-2">
-                            <h5 class="card-title"> t/SummerTravel</h5>
-                            <p><img class="card-img-bottom img-fluid" src=<%="post.image" %>></p>
-                            <a href="/travelhub/<%= post._id %>">
-                                <%= post.title %>
-                            </a>
-                            <div class="card-body">
-                                <p class="fade">
-                                    <%= post.body %>
-                                </p>
-                                <small class="text-muted">
-                                    <%= post.date.toDateString() %>
-                                </small>
-
-                            </div>
-                        </div>
-                        <% }) %>
+        <div class="container-grid ">
+            <% post.forEach(post=> { %>
+                <div class="post-div">
+                    <h5 class="title"> t/SummerTravel</h5>
+                    <p><img class="card-img-bottom img-fluid" src=<%="post.image" %>></p>
+                    <a href="/travelhub/<%= post._id %>">
+                        <%= post.title %>
+                    </a>
+                    <div class="card-body">
+                        <p class="text-body">
+                            <%= post.body %>
+                        </p>
+                        <small class="text-muted">
+                            <%= post.date.toDateString() %>
+                        </small>
+                    </div>
 
                 </div>
+                <% }) %>
 
-            </div>
         </div>
+
     </section>
 </body>
 
