@@ -80,4 +80,4 @@ app.get('/*',(req,res)=>{
 
 
 
-app.listen(3000, () => console.log('starting server at port:', PORT))
+app.listen(process.env.PORT || 4000);
