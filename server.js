@@ -3,7 +3,6 @@ const express = require('express')
 const methodOverride = require('method-override');
 const session = require("express-session");
 /* SECTION External modules */
-const navLinks = require('./views/partials/navLinks');
 const MongoStore = require("connect-mongo");
 
 
@@ -63,7 +62,7 @@ app.use(express.static('public'));
 app.use('/travelhub',authRequired,travelHubController );
 app.use('/comment',commentController );
 app.use("/", authController);
-app.use(navLinks);
+
 
 
 
