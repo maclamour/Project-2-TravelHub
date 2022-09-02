@@ -1,10 +1,8 @@
 
 module.exports ={
     Post: require("./THPost"),
-    Comment: require("../models/thcomment"),
+    Comment: require("./thcomment"),
     User: require("./User"),
 }
 
-
-// mongoose.connect( process.env.MONGODB_URI)
 
