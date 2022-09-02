@@ -2,6 +2,7 @@
 const express = require('express') 
 const methodOverride = require('method-override');
 const session = require("express-session");
+/* SECTION External modules */
 const MongoStore = require("connect-mongo");
 
 
@@ -19,6 +20,35 @@ const authController = require('./controller/auth_controllers')
 
 
 
+/* SECTION App Config */
+app.use(
+    session({
+        // where to store the sessions in mongodb
+        store: MongoStore.create({ mongoUrl: process.env.MONGODB_URI }),
+        // secret key is used to sign every cookie to say its is valid
+        secret: "super secret",
+        resave: false,
+        saveUninitialized: false,
+        // configure the experation of the cookie
+        cookie: {
+            maxAge: 1000 * 60 * 60 * 24 * 7 * 2, // two weeks
+        },
+    })
+);
+
+/* SECTION Middleware */
+app.use(function (req, res, next) {
+    res.locals.user = req.session.currentUser;
+    next();
+  });
+
+  const authRequired = function (req, res, next) {
+    if (req.session.currentUser) {
+      return next();
+    }
+  
+    return res.redirect("/login");
+  };
 
 // MIDDLEWARE
 app.use(methodOverride('_method'));
@@ -26,22 +56,9 @@ app.use(express.static('public'))
 app.use('/travelhub',travelHubController )
 app.use('/comment',commentController )
 app.use("/", authController);
+app.use('/tavelhub',authRequired,travelHubController)
 // app.use(navLinks);
 
-// app.use(
-//     session({
-//         // where to store the sessions in mongodb
-//         store: MongoStore.create({ mongoUrl: "mongodb://localhost:27017/travelhub" }),
-//         // secret key is used to sign every cookie to say its is valid
-//         secret: "super secret",
-//         resave: false,
-//         saveUninitialized: false,
-//         // configure the experation of the cookie
-//         cookie: {
-//             maxAge: 1000 * 60 * 60 * 24 * 7 * 2, // two weeks
-//         },
-//     })
-// );
 
 
 

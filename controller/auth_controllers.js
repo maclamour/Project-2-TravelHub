@@ -51,6 +51,7 @@ router.get("/register", function (req, res) {
   router.post("/login", async function (req, res) {
     try {
       // check if the user exists
+      let userInfo =req.body
       const foundUser = await User.findOne({ email: req.body.email });
       console.log(foundUser);
       // if not
@@ -60,17 +61,17 @@ router.get("/register", function (req, res) {
       // if the user exists
       // validate the user if passwords match -> login
       // .compare(body password, hashed password) => return true or false
-      const match = await bcrypt.compare(req.body.password, foundUser.password);
+      const match = await bcrypt.compare(userInfo.password, foundUser.password);
   
       // if not match send error
       if (!match) return res.send("password invalid");
   
-      // if match create the session and redirect to home\
-      // here we have created the key card
-    //   req.session.currentUser = {
-    //     id: foundUser._id,
-    //     username: foundUser.username,
-    //   };
+      //if match create the session and redirect to home\
+      //here we have created the key card
+      req.session.currentUser = {
+        id: foundUser._id,
+        username: foundUser.username,
+      };
   
       return res.redirect("/travelhub");
     } catch (err) {
