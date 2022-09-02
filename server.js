@@ -1,6 +1,10 @@
 //importing statements
 const express = require('express') 
 const methodOverride = require('method-override');
+const Post =require('./models/THPost')
+const Posts = require('./models/travelHub_model');
+require("./config/db.connection");
+
 
 const app = express()
 const PORT = 4000
@@ -32,7 +36,10 @@ app.get('/*',(req,res)=>{
 
 
 
-
-
+// Post.insertMany(Posts,(err, Posts)=>{
+//     if (err){ console.log(err)}
+//     console.log("added provided  data", Posts)
+//     // mongoose.connection.close();
+// });
 
 app.listen(4000, () => console.log('starting server at port:', PORT))
