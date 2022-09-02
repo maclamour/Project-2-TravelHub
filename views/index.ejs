@@ -9,35 +9,34 @@ rel="stylesheet"
 href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
 />
 
-
-    <body>
-
-        <section>
-            <!-- 1 div in the middle of the page that displays posts created -->
-            <div style="margin:100px" class="post-container">
-                <!-- <div class="row justify-content-center"> -->
-                <div class="col-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <!-- for-loop for posts-->
-                            <ul style="list-style-type: none";>
-                                <% for(let i=0; i<post.length; i++){ %>
-                                    <% let singlePost=post[i]; %>
-                                        <li>
-                                            <div style="overflow:hidden" class="card-header">t/SummerTravel |<a
-                                                    href="/travelhub/<%= singlePost._id %>">
-                                                    <%= singlePost.title %>
-                                                </a>
-                                                <%= singlePost.body %>
-                                            </div>
-                                        </li>
-                                        <% } %>
-                            </ul>
-                        </div>
-                    </div>
+<body>
+    <section class="section">
+        <div class="container-grid ">
+            <% post.forEach(post=> { %>
+                <div class="post-div">
+                    <div class="header">
+                    <h8 class="title"> t/SummerTravel</h8>
+                    <small class="text-muted">
+                        <%= post.date.toDateString() %>
+                    </small>
                 </div>
-            </div>
-        </section>
-    </body>
+                    <p><img class="card-img-bottom img-fluid" src=<%="post.image" %>></p>
+                    <a href="/travelhub/<%= post._id %>">
+                        <%= post.title %>
+                    </a>
+                    <div class="card-body">
+                        <p class="text-body">
+                            <%= post.body %>
+                        </p>
+                        
+                    </div>
+
+                </div>
+                <% }) %>
+
+        </div>
+
+    </section>
+</body>
 
 </html>

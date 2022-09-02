@@ -6,6 +6,8 @@ const session = require("express-session");
 const MongoStore = require("connect-mongo");
 
 
+
+
 const app = express()
 const PORT = 3000
 app.set('view engine', 'ejs')
@@ -76,7 +78,10 @@ app.get('/*',(req,res)=>{
 
 
 
-
-
+// Post.insertMany(Posts,(err, Posts)=>{
+//     if (err){ console.log(err)}
+//     console.log("added provided  data", Posts)
+//     // mongoose.connection.close();
+// });
 
 app.listen(process.env.PORT || 4000);

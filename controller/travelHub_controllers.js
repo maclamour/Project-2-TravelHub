@@ -52,12 +52,12 @@ router.post("/", async (req, res) => {
     }
   });
 
-// index route
+// index route - homepage
 router.get("/", async (req, res) => {
     try {
       const allPost = await db.Post.find();
       const context = { post: allPost };
-      // console.log(allPost)
+      
       res.render("index.ejs", context);
     } catch (err) {
       console.log(err);
