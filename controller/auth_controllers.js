@@ -67,10 +67,10 @@ router.get("/register", function (req, res) {
   
       // if match create the session and redirect to home\
       // here we have created the key card
-      req.session.currentUser = {
-        id: foundUser._id,
-        username: foundUser.username,
-      };
+    //   req.session.currentUser = {
+    //     id: foundUser._id,
+    //     username: foundUser.username,
+    //   };
   
       return res.redirect("/travelhub");
     } catch (err) {
