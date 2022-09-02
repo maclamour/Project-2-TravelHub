@@ -59,11 +59,10 @@ app.use(function (req, res, next) {
 
 // MIDDLEWARE
 app.use(methodOverride('_method'));
-app.use(express.static('public'))
-app.use('/travelhub',authRequired,travelHubController )
-app.use('/comment',commentController )
+app.use(express.static('public'));
+app.use('/travelhub',authRequired,travelHubController );
+app.use('/comment',commentController );
 app.use("/", authController);
-// app.use('/',authRequired,travelHubController)
 app.use(navLinks);
 
 
