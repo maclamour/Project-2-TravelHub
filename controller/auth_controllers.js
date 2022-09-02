@@ -1,83 +1,92 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const bcrypt = require('bcryptjs');
-const { User } = require('../models');
+const bcrypt = require("bcryptjs");
+const { User } = require("../models");
+const auth = require("./auth_controllers")
 
-// express.json() and express.urlencoded is needed for POST and PUT requests to take in data payloads.
-// built in method to recognize incoming request object as a JSON object
+//MIDDLEWARE
 router.use(express.json());
-
-// built in method to recognize incoming request object as strings or arrays
 router.use(express.urlencoded({ extended: false }));
 
-router.get('/login', (req, res) => {
-    res.render('users/login.ejs');
-})
+// MODELS IMPORT
+const db = require("../models");
 
-router.get('/register', (req, res) => {
-    res.render('users/register.ejs');
-})
+router.get("/login", function (req, res) {
+    res.render("auth/login");
+  });
 
-router.post('/login', async (req, res, next) => {
+
+router.get("/register", function (req, res) {
+    return res.render("auth/register");
+  });
+
+  router.post("/register", async function (req, res) {
     try {
-        let formData = req.body;
-        let foundUser = await User.findOne({email: formData.email});
-        if(!foundUser) {
-            return res.redirect('/register')
-        } else {
-            const match = await bcrypt.compare(formData.password, foundUser.password);
-            console.log(match);
-            if(!match) return res.send("Email or password doesn't match!");
-            req.session.currentUser = {
-                id: foundUser._id,
-                username: foundUser.username,
-            };
-            return res.redirect('/products');
-        }
-
-    } catch(err) {
-        console.log(err);
-        next();
-    }
-})
-
-router.post('/register', async (req, res, next) => {
-    try {
-        let formData = req.body;
-        // if(formData.password.length < 6) {
-        //     return res.redirect('/somepagesayingIhateuserslikethis')
-        // }
-        let foundUser = await User.exists({email: formData.email});
-        if(foundUser) {
-            return res.redirect('/login')
-        } else {
-            // Industry standard of 12 rounds
-            let salt = await bcrypt.genSalt(12);
-            console.log(`My salt is ${salt}`)
-            // Create a hash
-            let hash = await bcrypt.hash(formData.password, salt);
-            console.log(`My hash is ${hash}`)
-            formData.password = hash;
-
-            const newUser = await User.create(formData);
-            console.log(`My new user is ${newUser}`)
-            return res.redirect('/login')
-        }
-        
-    } catch(err) {
-        console.log(err);
-        next();
-    }
-})
-
-router.get("/logout", async function (req, res) {
-    try {
-        await req.session.destroy();
+      // step check if user exists
+      const foundUser = await User.exists({ email: req.body.email });
+      // if so redirect to login
+      if (foundUser) {
         return res.redirect("/login");
-    } catch (error) {
-        console.log(error);
-        return res.send(error);
+      }
+      // if not create user and redirect to login
+  
+      // salt will created a more complicated hash
+      const salt = await bcrypt.genSalt(12);
+      // hash will convert our password into something more secure
+      // test1234 => "$2a$10$5vR9VhGpkARz6EFPdkuNQ.aZNRGUgSCNSKEb9Xp1IKzrfxYETlkB2"
+      const hash = await bcrypt.hash(req.body.password, salt);
+  
+      req.body.password = hash;
+  
+      // create user in database
+      const newUser = await User.create(req.body);
+  
+      return res.redirect("/login");
+    } catch (err) {
+      console.log(err);
+      return res.send(err);
     }
-});
+  });
+
+  router.post("/login", async function (req, res) {
+    try {
+      // check if the user exists
+      const foundUser = await User.findOne({ email: req.body.email });
+      console.log(foundUser);
+      // if not
+      // redirect to register
+      if (!foundUser) return res.redirect("/register");
+  
+      // if the user exists
+      // validate the user if passwords match -> login
+      // .compare(body password, hashed password) => return true or false
+      const match = await bcrypt.compare(req.body.password, foundUser.password);
+  
+      // if not match send error
+      if (!match) return res.send("password invalid");
+  
+      // if match create the session and redirect to home\
+      // here we have created the key card
+      req.session.currentUser = {
+        id: foundUser._id,
+        username: foundUser.username,
+      };
+  
+      return res.redirect("/travelhub");
+    } catch (err) {
+      console.log(err);
+      res.send(err);
+    }
+  });
+
+  router.get("/logout", async function (req, res) {
+    try {
+      await req.session.destroy();
+      return res.redirect("/login");
+    } catch (error) {
+      console.log(error);
+      return res.send(error);
+    }
+  });
 
 module.exports = router;

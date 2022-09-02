@@ -28,20 +28,20 @@ app.use('/comment',commentController )
 app.use("/", authController);
 // app.use(navLinks);
 
-app.use(
-    session({
-        // where to store the sessions in mongodb
-        store: MongoStore.create({ mongoUrl: "mongodb://localhost:27017/sellitup" }),
-        // secret key is used to sign every cookie to say its is valid
-        secret: "super secret",
-        resave: false,
-        saveUninitialized: false,
-        // configure the experation of the cookie
-        cookie: {
-            maxAge: 1000 * 60 * 60 * 24 * 7 * 2, // two weeks
-        },
-    })
-);
+// app.use(
+//     session({
+//         // where to store the sessions in mongodb
+//         store: MongoStore.create({ mongoUrl: "mongodb://localhost:27017/travelhub" }),
+//         // secret key is used to sign every cookie to say its is valid
+//         secret: "super secret",
+//         resave: false,
+//         saveUninitialized: false,
+//         // configure the experation of the cookie
+//         cookie: {
+//             maxAge: 1000 * 60 * 60 * 24 * 7 * 2, // two weeks
+//         },
+//     })
+// );
 
 
 
