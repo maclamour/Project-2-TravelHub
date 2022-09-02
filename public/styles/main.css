@@ -50,6 +50,22 @@ a:link {
 }
 
   
+.new-container {
+  
+    /* background-color:black; */
+  font-family: 'IBM Plex Sans', sans-serif;
+  display:grid;
+  width: 100%;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(auto-fill, 120px);
+  grid-row-gap: .5em;
+  grid-column-gap: 1em;
+  grid-area: 5/5/5/3;
+  list-style: none;
+    
+
+}
+
 /* 
   .card-body{
     display:block;
