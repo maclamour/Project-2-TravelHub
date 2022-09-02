@@ -23,7 +23,7 @@ router.post("/", async (req, res) => {
     // post.push(createdPost);
     try {
       const newPost = await db.Post.create(createdPost);
-  
+  console.log(newPost)
       // console.log(newPost);
   
       res.redirect(`/travelhub`);

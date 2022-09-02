@@ -7,7 +7,7 @@ const postSchema = new mongoose.Schema({
     body: String,
     comment: [{type: mongoose.Types.ObjectId,ref: "Comment"}],
     date: {type: Date, default:Date.now},
-    image: {type: String, default: null},
+    image: {type:String},
 },
 
 {timestamps: true},

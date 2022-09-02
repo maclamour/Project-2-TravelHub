@@ -9,7 +9,7 @@ require("./config/db.connection");
 const app = express()
 const PORT = 4000
 app.set('view engine', 'ejs')
-require("./config/db.connection");
+
 
 
 //CONTROLLER IMPORTS
