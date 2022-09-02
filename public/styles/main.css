@@ -15,12 +15,13 @@ body {
   grid-area: 3/2 / 3 / 4;
 }
 .post-div {
-  background-color: #495057;
-  border-width: 30px;
-  border-radius: 2px;
+  background-color: rgb(99, 127, 153, .75);
   
+  /* border-width: 30px; */
+  border-radius: 2px;
   padding-top:8px;
   margin-top: 20px;
+  /* grid-area: 3/3/3/3; */
 }
 
 .text-body {
@@ -31,7 +32,9 @@ body {
   display: flex;
   justify-content: space-around;
 }
-  
+ img {
+max-width: fit-content;
+ } 
 
 a:link {
   color: white;
