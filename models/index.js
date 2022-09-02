@@ -5,4 +5,4 @@ module.exports ={
     Comment: require("./THComment"),
 }
 
-mongoose.connect( process.env.MONGODB_URI 
+// mongoose.connect( process.env.MONGODB_URI)
