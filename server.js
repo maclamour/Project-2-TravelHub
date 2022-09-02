@@ -6,7 +6,7 @@ const MongoStore = require("connect-mongo");
 
 
 const app = express()
-const PORT = 4000
+const PORT = 3000
 app.set('view engine', 'ejs')
 require("./config/db.connection");
 
@@ -57,4 +57,4 @@ app.get('/*',(req,res)=>{
 
 
 
-app.listen(4000, () => console.log('starting server at port:', PORT))
+app.listen(3000, () => console.log('starting server at port:', PORT))

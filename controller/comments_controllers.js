@@ -13,19 +13,37 @@ const db = require("../models");
 
 
 // index route
-router.get('/', async (req, res, next) => {
-    try{
-        const allComment = await db.Comment.find().populate('post').exec()
-        const allPost = await db.Post.find()
-        // res.render('comment/show.ejs', {comments: allComment, posts: allPost})
-        res.render('comment/index.ejs', {comments: allComment, posts: allPost})
-        
-    }catch(err){
-       console.log(err)
-       next()
-    }
-});
+    router.get("/", (req, res) => {
+            db.Comment.find({})
+                      // here we are adding the user to the populate command so we get both the product and user on a review
+              .populate("comment user")
+              .exec((error, allComments) => {
+                if (error) {
+                  console.log(error);
+                  req.error = error;
+                  return next();
+                }
+          
+                db.Post.find({}, (error, allPosts) => {
+                  if (error) {
+                    console.log(error);
+                    req.error = error;
+                    return next();
+                  }
+          
+                  const context = {
+                    comments: allComments,
+                    posts: allPosts,
+                  };
+          
+                  return res.render("comment/index", context);
+                });
+              });
+          });
 
+                    
+  
+        
 
 // //show route
 router.get('/:id/', async (req, res, next) => {
