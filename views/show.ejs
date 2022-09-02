@@ -5,9 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SET NAME HERE</title>
-    <link rel="stylesheet" href="styles/main.css" />
-    <script src = 'scripts/app.js' defer></script>
+    <link rel="stylesheet" href="/styles/main.css" />
+    <script src = '/scripts/main.js' defer></script>
 </head>
+
 <body>
     
 
@@ -51,12 +52,12 @@
                                 <div class="form-group col-5 col-md-5 ">
                                     <button><a href="/travelhub/<%=id%>/edit">Edit Post</a></button>
                                 </div>
+                                <div>
                                 <h2>Comments Section</h2>
-                                <li><%comment.forEach(comments=> {%>
-                                    <p><%=comments.content%></p>
-                                    <li><a href="/travelhub/<%=comments._id%>"><%=comments.content%></a></li>
+                                <%comment.forEach(comments=> {%>
+                                    <p src="/travelhub/<%=comments._id%>"><%=comments.content%></p>
                                     <%})%>
-                                </li>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -66,7 +67,7 @@
     </div>
 </section>
 
-<%-include('../views/comment/show.ejs')%>
+<%-include('../views/comment/show.ejs', {postId: post._id})%>
 
 </html>
 
