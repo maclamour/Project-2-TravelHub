@@ -1,12 +1,75 @@
 
 body {
-    display: flex;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 2fr;
-    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-    color: #212529;
-    padding: 10%;
-    justify-items: center;
-    align-items: center;
+    /* background-color:black; */
+  font-family: 'IBM Plex Sans', sans-serif;
+  display:grid;
+  width: 100%;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(auto-fill, 120px);
+  grid-row-gap: .5em;
+  grid-column-gap: 1em;
+    
 }
+
+.section{
+  grid-area: 3/2 / 3 / 4;
+}
+.post-div {
+  background-color: rgb(99, 127, 153, .75);
+  
+  /* border-width: 30px; */
+  border-radius: 2px;
+  padding-top:8px;
+  margin-top: 20px;
+  /* grid-area: 3/3/3/3; */
+}
+
+.text-body {
+  padding-right:8px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-around;
+}
+ img {
+max-width: fit-content;
+ } 
+
+a:link {
+  color: white;
+  background-color:transparent;
+  text-decoration:none;
+}
+
+.title {
+  display: flex;
+  cursor:pointer;
+  justify-content: flex-start;
+  font-size: small;
+  text-align: center;
+  color:aliceblue;
+  padding-right:8px;
+}
+
+  
+/* 
+  .card-body{
+    display:block;
+    background:linear-gradient(transparent 150px, rgba(173, 167, 167, 0.928));
+    color: white;
+    max-height: 30px;
+    visibility: visible;
+    opacity: .5;
+    
+  } */
+/* 
+  .text-muted {
+    text-align: right;
+  }
+   
+
+  .fade {
+    -webkit-mask-image: linear-gradient(180deg, #000 60%, transparent);
+  } */ 
+

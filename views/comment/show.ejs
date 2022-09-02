@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    <!-- <head>
+<!-- <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +9,7 @@
 </head> -->
 
 
-<!-- const comments = {oneComment: newComment} -->
+
 
 <section>
     <div class="container d-flex align-content-start flex-wrap"
@@ -17,37 +17,19 @@
         <div class="col-4">
             <div class="card">
                 <div class="card-body">
-                    <div>
-                        <!-- comment -->
-                        <!-- <form action="/comment/"?_method="DELETE" method="POST"> -->
-                            <!-- <input class="btn btn-danger" type="submit" value="Delete Post" /> -->
-                        </form>
-                        
-                     
-                        <form action="/comment/<%=postId%> " method="POST">
-                            <label for="content"></label>
-                            <textarea 
-                                class="form-control mh-100" 
-                                type="text" 
-                                name="content"
-                                rows="3"
-                                placeholder="what are your thoughts"
-                                >
+                    <form action="/comment/<%=postId%> " method="POST">
+                        <label for="content"></label>
+                        <textarea class="form-control" type="text" name="content" rows="3"
+                            placeholder="what are your thoughts">
                             </textarea>
-                            <input type="hidden" value="<%=postId%>" name="post">
-                            <button>Submit Comment</button>
-                        </form>
-                        <!-- delete -->
-                        
-
-                    </div>
+                        <input type="hidden" value="<%=postId%>" name="post">
+                        <input type="hidden" value="<%=user.id%>" name="user">
+                        <button>Submit Comment</button>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
-
-    <!-- comments -->
-    
 </section>
 
 </html>
