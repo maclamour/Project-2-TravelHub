@@ -71,6 +71,7 @@ router.get("/register", function (req, res) {
       req.session.currentUser = {
         id: foundUser._id,
         username: foundUser.username,
+        // console.log(currentUser),
       };
   
       return res.redirect("/travelhub");

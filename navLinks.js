@@ -18,3 +18,5 @@
 //     // locals
 //     next();
 //   };
+
+//   module.exports = navLinks

@@ -3,6 +3,7 @@ const express = require('express')
 const methodOverride = require('method-override');
 const session = require("express-session");
 /* SECTION External modules */
+// const navLinks = require('');
 const MongoStore = require("connect-mongo");
 
 
@@ -21,6 +22,7 @@ const authController = require('./controller/auth_controllers')
 
 
 /* SECTION App Config */
+// app.use(navLinks);
 app.use(
     session({
         // where to store the sessions in mongodb
@@ -32,9 +34,14 @@ app.use(
         // configure the experation of the cookie
         cookie: {
             maxAge: 1000 * 60 * 60 * 24 * 7 * 2, // two weeks
+       
         },
     })
+
+    
 );
+
+// console.log(session);
 
 /* SECTION Middleware */
 app.use(function (req, res, next) {

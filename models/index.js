@@ -4,5 +4,6 @@ module.exports ={
     Post: require("./THPost"),
     Comment: require("./THComment"),
     User: require("./User"),
+    // auth: require("./auth_controller"),
     
 }
