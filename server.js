@@ -11,7 +11,7 @@ const MongoStore = require("connect-mongo");
 const app = express()
 const PORT = 3000
 app.set('view engine', 'ejs')
-
+require("./config/db.connection");
 
 
 //CONTROLLER IMPORTS
