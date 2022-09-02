@@ -17,16 +17,13 @@
         <div class="col-4">
             <div class="card">
                 <div class="card-body">
-
-
-
-
                     <form action="/comment/<%=postId%> " method="POST">
                         <label for="content"></label>
                         <textarea class="form-control" type="text" name="content" rows="3"
                             placeholder="what are your thoughts">
                             </textarea>
                         <input type="hidden" value="<%=postId%>" name="post">
+                        <input type="hidden" value="<%=user.id%>" name="user">
                         <button>Submit Comment</button>
                     </form>
                 </div>

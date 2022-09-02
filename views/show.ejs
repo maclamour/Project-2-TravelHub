@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 
+   
+    <!-- <%-include('partials/nav.ejs')%> -->
+
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,11 +16,6 @@
 
 <body>
 
-    <section>
-        <div class="container d-flex align-content-start flex-wrap"
-            style="width: 500px; background-color: rgba(160, 226, 197, 0.349)" ;>
-
-            <div style="margin:100px" class="post-container">
 
                 <div class="col-3">
                     <div class="card">
@@ -72,3 +71,4 @@
     <%-include('../views/comment/show.ejs', {postId: post._id})%>
 
 </html>
+

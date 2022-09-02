@@ -10,6 +10,7 @@ body {
   grid-column-gap: 1em;
     
 }
+
 .section{
   grid-area: 3/2 / 3 / 4;
 }
@@ -68,3 +69,4 @@ a:link {
   .fade {
     -webkit-mask-image: linear-gradient(180deg, #000 60%, transparent);
   } */ 
+
