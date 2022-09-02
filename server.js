@@ -75,7 +75,7 @@ app.get('/*',(req,res)=>{
     res.render('404')
 })
 
-
+// test
 
 // Post.insertMany(Posts,(err, Posts)=>{
 //     if (err){ console.log(err)}
