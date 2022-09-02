@@ -17,6 +17,8 @@ const db = require("../models");
            try{
        const getComment = await db.Comment.find().populate("comment user").exec()
        const getPost= await db.Post.find()
+       console.log(getComment);
+       console.log(getPost);
                       // here we are adding the user to the populate command so we get both the product and user on a review
             }catch(err){
                 console.log(err)
