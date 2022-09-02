@@ -1,7 +1,7 @@
 
 module.exports ={
     Post: require("./THPost"),
-    Comment: require("./thcomment"),
+    Comment: require("../models/thcomment"),
     User: require("./User"),
 }
 
