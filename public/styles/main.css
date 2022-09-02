@@ -12,30 +12,25 @@ body {
   grid-column-gap: 1em;
     
 }
-.container-grid{
-  grid-area: 5/5 / 5 / 4;
+.section{
+  grid-area: 3/2 / 3 / 4;
 }
 .post-div {
-  background-color: antiquewhite;
+  background-color: rgb(133, 106, 106);
+  border-width: 30px;
   border-color: aqua;
   padding-top:8px;
+  margin-top: 20px;
 }
 
 .text-body {
   padding-right:8px;
 }
 
-.card{
-  /* background-color: rgb(26,26,27); */
-  color: white;
-  
- } 
-/* .img-fluid {
-
-    width: 100%;
-    height: auto;
-} */
-
+.header {
+  display: flex;
+  justify-content: space-evenly;
+}
   
   
   

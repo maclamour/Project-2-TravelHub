@@ -5,11 +5,16 @@
 
 <%-include('partials/nav.ejs')%>
 <body>
-    <section>
+    <section class="section">
         <div class="container-grid ">
             <% post.forEach(post=> { %>
                 <div class="post-div">
+                    <div class="header">
                     <h5 class="title"> t/SummerTravel</h5>
+                    <small class="text-muted">
+                        <%= post.date.toDateString() %>
+                    </small>
+                </div>
                     <p><img class="card-img-bottom img-fluid" src=<%="post.image" %>></p>
                     <a href="/travelhub/<%= post._id %>">
                         <%= post.title %>
@@ -18,9 +23,7 @@
                         <p class="text-body">
                             <%= post.body %>
                         </p>
-                        <small class="text-muted">
-                            <%= post.date.toDateString() %>
-                        </small>
+                        
                     </div>
 
                 </div>
