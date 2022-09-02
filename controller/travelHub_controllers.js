@@ -39,7 +39,8 @@ router.post("/", async (req, res) => {
       const foundPost = await db.Post.findById(req.params.id);
       const foundComment = await db.Comment.find({
         post: req.params.id,
-      });
+      }).populate("user").exec() ;
+      console.log(foundComment)
       res.render("show.ejs", {
         post: foundPost,
         id: foundPost._id,
