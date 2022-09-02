@@ -1,6 +1,6 @@
 
 body {
-    /* background-color:black; */
+    background-color:black;
   font-family: 'IBM Plex Sans', sans-serif;
   display:grid;
   width: 100%;
@@ -16,12 +16,9 @@ body {
 }
 .post-div {
   background-color: rgb(99, 127, 153, .75);
-  
-  /* border-width: 30px; */
   border-radius: 2px;
   padding-top:8px;
   margin-top: 20px;
-  /* grid-area: 3/3/3/3; */
 }
 
 .text-body {
