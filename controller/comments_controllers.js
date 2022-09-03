@@ -13,68 +13,49 @@ const db = require("../models");
 
 
 // index route
-    router.get("/", (req, res) => {
-            db.Comment.find({})
-                      // here we are adding the user to the populate command so we get both the product and user on a review
-              .populate("comment user")
-              .exec((error, allComments) => {
-                if (error) {
-                  console.log(error);
-                  req.error = error;
-                  return next();
-                }
-          
-                db.Post.find({}, (error, allPosts) => {
-                  if (error) {
-                    console.log(error);
-                    req.error = error;
-                    return next();
-                  }
-          
-                  const context = {
-                    comments: allComments,
-                    posts: allPosts,
-                  };
-          
-                  return res.render("comment/index", context);
-                });
-              });
-          });
-
-                    
-  
-        
+router.get("/", async (req, res) => {
+  // here we are adding the user to the populate command so we get both the product and user on a review
+  try {
+    const allComments = await db.Comment.find().populate("comment user").exec();
+    const allPosts = await db.Post.find();
+    const context = { comments: allComments, posts: allPosts }
+    res.render("comment/index", context);
+  } catch(err) {
+    console.log(err)
+    next()
+  }
+})
 
 // //show route
 router.get('/:id/', async (req, res, next) => {
-    try{
-        const foundComment = await db.Comment.findById(req.params.id).populate('post').exec()
-        res.render('comment/show.ejs', {comment: foundComment})
-    }catch(err){
-       console.log(err)
-       next()
-    }
+  try {
+    const foundComment = await db.Comment.findById(req.params.id).populate('post').exec()
+    res.render('comment/show.ejs', { comment: foundComment })
+  } catch (err) {
+    console.log(err)
+    next()
+  }
 })
 
 // create route 
 //localhost:4000/travelhub/:id/
 router.post('/:id', async (req, res, next) => {
-    try{
-         //res.send(req.body)
-         
-        const newComment = await db.Comment.create(req.body)
-        const post = await db.Post.findById(newComment.post)
-        post.comment.push(newComment.id)
-        await post.save()
-        // const id = req.params.id
-        // newComment.push[{}]
-        //push new comment into a post
-       // console.log(newComment)
-        res.redirect(`/travelhub/${newComment.post}`)
-    }catch(err){
-       console.log(err)
-       next()
-    }
+  try {
+    //res.send(req.body)
+
+    const newComment = await db.Comment.create(req.body)
+    const post = await db.Post.findById(newComment.post)
+    post.comment.push(newComment.id)
+    await post.save()
+    // const id = req.params.id
+    // newComment.push[{}]
+    //push new comment into a post
+    // console.log(newComment)
+    res.redirect(`/travelhub/${newComment.post}`)
+  } catch (err) {
+    console.log(err)
+    next()
+  }
 
 })
 
@@ -91,15 +72,15 @@ router.post('/:id', async (req, res, next) => {
 // })
 
 // update route
-router.put('/:id', async (req, res, next)=>{
-    try{
-        const updatedComment = await db.Comment.findByIdAndUpdate(req.params.id, req.body, {new:true})
-        //console.log(updatedComment)
-        res.redirect(`/travelhub/${updatedComment.post}`)
-    }catch(err){
-       //console.log(err)
-       next()
-    }
+router.put('/:id', async (req, res, next) => {
+  try {
+    const updatedComment = await db.Comment.findByIdAndUpdate(req.params.id, req.body, { new: true })
+    //console.log(updatedComment)
+    res.redirect(`/travelhub/${updatedComment.post}`)
+  } catch (err) {
+    //console.log(err)
+    next()
+  }
 
 })
 
