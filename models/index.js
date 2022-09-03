@@ -3,7 +3,7 @@ require('./index')
 
 
 module.exports = {
-    Post: require("./THPost"),
+    Post: require("./thPost"),
     User: require("./User"),
-    Comment: require("./THComment")
+    Comment: require("./thComment")
 }
