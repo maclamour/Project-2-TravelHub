@@ -1,4 +1,4 @@
-require('./i')
+require('./index')
 
 
 
