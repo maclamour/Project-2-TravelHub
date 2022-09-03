@@ -9,7 +9,7 @@ router.use(express.json());
 router.use(express.urlencoded({ extended: false }));
 
 // MODELS IMPORT
-const db = require("../models/i");
+const db = require("../models/");
 
 router.get("/login", function (req, res) {
     res.render("auth/login");
