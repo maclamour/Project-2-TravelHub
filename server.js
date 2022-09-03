@@ -18,7 +18,6 @@ require("./config/db.connection");
 const travelHubController = require('./controller/travelHub_controllers.js');
 const commentController = require('./controller/comments_controllers')
 const authController = require('./controller/auth_controllers')
-// const navLinks = require('./navLinks');
 
 
 /* SECTION App Config */
