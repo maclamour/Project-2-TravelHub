@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
-require('dotenv').config();
+// const mongoose = require('mongoose');
+// require('dotenv').config();
 const express = require("express");
 const router = express.Router();
 
@@ -10,7 +10,7 @@ router.use(express.json());
 router.use(express.urlencoded({ extended: false }));
 
 // MODELS IMPORT
-const db = require("../models/index");
+const db = require("../models");
 
 
 //new route
