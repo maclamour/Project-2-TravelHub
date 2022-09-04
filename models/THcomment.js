@@ -13,7 +13,7 @@ const thCommentSchema = new mongoose.Schema({
 
 );
 
-const ThComment = mongoose.model('Comment',thCommentSchema);
+const ThComment = mongoose.model('ThComment',thCommentSchema);
 
 module.exports = ThComment;
 
