@@ -15,6 +15,8 @@ router.get("/login", function (req, res) {
     res.render("auth/login");
   });
 
+  //test
+
 
 router.get("/register", function (req, res) {
     return res.render("auth/register");
