@@ -82,4 +82,4 @@ app.get('/*',(req,res)=>{
 //     // mongoose.connection.close();
 // });
 
-app.listen(PORT || 4000);
+app.listen(PORT);
