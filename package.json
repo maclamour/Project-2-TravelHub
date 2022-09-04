@@ -9,7 +9,7 @@
     "express-session": "^1.17.3",
     "json": "^11.0.0",
     "method-override": "^3.0.0",
-    "mongoose": "^6.5.3",
+    "mongoose": "^6.5.4",
     "nodemon": "^2.0.19"
   },
   "name": "project-2-travelhub",
@@ -31,5 +31,4 @@
     "url": "https://github.com/maclamour/Project-2-TravelHub/issues"
   },
   "homepage": "https://github.com/maclamour/Project-2-TravelHub#readme"
-  
 }
