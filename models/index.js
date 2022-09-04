@@ -3,7 +3,7 @@ require('../models')
 
 
 module.exports = {
-    Post: require("./thpost"),
+    Post: require("./THPost"),
     User: require("./User"),
     Comment: require("./thcomment"),
 }
