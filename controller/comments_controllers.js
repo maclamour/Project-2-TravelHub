@@ -9,7 +9,7 @@ router.use(express.json());
 router.use(express.urlencoded({ extended: false }));
 
 // MODELS IMPORT
-const db = require("/models");
+const db = require("../models");
 
 //test
 
