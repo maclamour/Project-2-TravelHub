@@ -1,12 +1,15 @@
 //importing statements
 const express = require('express') 
-const methodOverride = require('method-override');
 const session = require("express-session");
 /* SECTION External modules */
 const MongoStore = require("connect-mongo");
 require('dotenv').config();
 
 
+//CONTROLLER IMPORTS
+const commentController = require('./controller/commentscontrollers.js')
+const authController = require('./controller/authcontrollers.js')
+const travelHubController = require("./controller/travelhubcontrollers");
 
 
 const app = express()
@@ -15,11 +18,9 @@ app.set('view engine', 'ejs')
 // require("./config/db.connection");
 // require('./models')
 
+const methodOverride = require('method-override');
 
-//CONTROLLER IMPORTS
-const commentController = require('./controller/commentscontrollers.js')
-const authController = require('./controller/authcontrollers.js')
-const travelHubController = require("./controller/travelhubcontrollers");
+
 
 
 /* SECTION App Config */
