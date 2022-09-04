@@ -2,50 +2,44 @@
 <html lang="en">
 
     <%-include('../partials/nav.ejs')%>
-    <link
+    <!-- <link
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
-/>
-
-  <body class="has-navbar-fixed-top">
-  
-  <!-- <a href="/travelhub"> Home</a>
-  <a href="/register"> Register</a>
-  <a href="/login"> Login</a> -->
-    <section class="hero is-fullheight-with-navbar is-link">
-      <div class="hero-body is-flex-direction-column">
-        <h1 class="title">Login</h1>
+/> -->
+<body class="login-body">
+  <div class="login">
+        <h1 class="login-title">Login</h1>
         <form action="/login" method="POST" class="box">
           <div class="field">
-            <label class="label">Email</label>
+            <label class="label"></label>
             <div class="control">
               <input
                 name="email"
                 class="input"
                 type="email"
-                placeholder="example@domain.com"
+                placeholder="Username or Email"
               />
             </div>
           </div>
           <div class="field">
-            <label class="label">Password</label>
+            <label class="label"></label>
             <div class="control">
               <input
                 name="password"
                 class="input"
                 type="password"
-                placeholder="******"
+                placeholder="Password"
               />
             </div>
           </div>
           <div class="field">
             <div class="control">
-              <button class="button is-link is-fullwidth">Submit</button>
+              <button class="submit-button">Submit</button>
             </div>
           </div>
         </form>
       </div>
-    </section>
-    <main class="container is-max-widescreen"></main>
+    
+    <!-- <main class="container is-max-widescreen"></main> -->
   </body>
 </html>
