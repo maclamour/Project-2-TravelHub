@@ -1,7 +1,7 @@
 require("../config/db.connection")
 
 module.exports = {
-    Thcomment: require("./Thcomment"),
+    Comment: require("./Comment"),
     User: require("./User"),
-    Thpost: require('./Thpost'),
+    Post: require('./Post'),
 }

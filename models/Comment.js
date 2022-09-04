@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 // const Posts = require('./travelHub_model');
 // //const comments = require('./comment_model');
 
-const thCommentSchema = new mongoose.Schema({
+const CommentSchema = new mongoose.Schema({
     content: String,
     post: {type: mongoose.Types.ObjectId,ref: "Post"},
     user: {type: mongoose.Types.ObjectId,ref: "User"},
@@ -13,7 +13,7 @@ const thCommentSchema = new mongoose.Schema({
 
 );
 
-const ThComment = mongoose.model('ThComment',thCommentSchema);
+const ThComment = mongoose.model('ThComment',CommentSchema);
 
-module.exports = ThComment;
+module.exports = Comment;
 

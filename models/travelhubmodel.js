@@ -1,4 +1,4 @@
-// const Post = require('./thpost');
+
 
 const Posts = [
     {

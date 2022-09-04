@@ -7,9 +7,9 @@ require('dotenv').config();
 
 
 //CONTROLLER IMPORTS
-const commentController = require('./controller/commentscontrollers.js')
-const authController = require('./controller/authcontrollers.js')
-const travelHubController = require("./controller/travelhubcontrollers");
+const commentController = require('./controller/comments_controllers.js')
+const authController = require('./controller/auth_controllers.js')
+const travelHubController = require("./controller/travelHub_controllers");
 
 
 const app = express()
