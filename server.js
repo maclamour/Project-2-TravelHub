@@ -12,6 +12,7 @@ const app = express()
 const PORT = process.env.PORT || 4000
 app.set('view engine', 'ejs')
 require("./config/db.connection");
+require('./models')
 
 
 //CONTROLLER IMPORTS
