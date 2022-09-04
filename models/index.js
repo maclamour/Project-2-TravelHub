@@ -1,4 +1,4 @@
-require('/models')
+// require('/models')
 
 module.exports ={
     Post: require('./THPost'),
