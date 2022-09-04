@@ -16,9 +16,9 @@ require("./config/db.connection");
 
 
 //CONTROLLER IMPORTS
-const travelHubController = require("./controller/travelhubcontrollers");
-const commentController = require('./controller/commentscontrollers')
-const authController = require('./controller/authcontrollers')
+const travelHubController = require("./controller/travelhubcontrollers.js");
+const commentController = require('./controller/commentscontrollers.js')
+const authController = require('./controller/authcontrollers.js')
 
 
 /* SECTION App Config */
