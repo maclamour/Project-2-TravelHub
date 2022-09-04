@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const Posts = require('./travelHub_model');
+const Posts = require('./travelhub_model');
 
 const postSchema = new mongoose.Schema({
     title: String,
