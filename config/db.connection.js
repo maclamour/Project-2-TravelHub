@@ -4,7 +4,7 @@ require('dotenv').config()
 
 const connectionStr = process.env.MONGODB_URI
 
-const connection = mongoose.connect(connectionStr)
+ const connection = mongoose.connect( process.env.MONGODB_URI || "YOUR CURRENT LOCALHOST DB CONNECTION STRING HERE" );
 
 mongoose.connection.on('connected', ()=>console.log(
     `${new Date().toLocaleTimeString()}: MongoDB connected...`

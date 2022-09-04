@@ -1,4 +1,4 @@
-const Post = require('./THPost');
+
 
 const Posts = [
     {

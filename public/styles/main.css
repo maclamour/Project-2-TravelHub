@@ -1,75 +1,139 @@
 
 body {
-    /* background-color:black; */
+  background-color:#e9ecef;
   font-family: 'IBM Plex Sans', sans-serif;
   display:grid;
-  width: 100%;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: 200px 1fr 200px;
   grid-template-rows: repeat(auto-fill, 120px);
   grid-row-gap: .5em;
   grid-column-gap: 1em;
-    
+
 }
 
 .section{
-  grid-area: 3/2 / 3 / 4;
+  margin-top:100px;
 }
-.post-div {
-  background-color: rgb(99, 127, 153, .75);
+.form-container {
+  background-color:#5596d6;
+  font-family: 'IBM Plex Sans', sans-serif;
+  width: 20px;
+  height: 20px;
   
-  /* border-width: 30px; */
-  border-radius: 2px;
+}
+ul {
+  list-style: none;
+}
+.post-div, card-comment{
+  
+  background-color: azure; 
+  border-radius: 25px;
   padding-top:8px;
   margin-top: 20px;
-  /* grid-area: 3/3/3/3; */
+  border: 1px solid silver;
 }
-
+.register {
+  margin-top: 30%;
+  background-color: #fff;
+  border-radius: 0 0 8px 8px;
+  border-top: 1px solid #dadde1;
+  box-sizing: border-box;
+  padding: 16px;
+  position: relative;
+  width: 432px;
+  height: fit-content;
+  /* display: grid; */
+  /* grid-area: 3/3; */
+}
+.login {
+  margin-top: 30%;
+  background-color: #fff;
+  border-radius: 0 0 8px 8px;
+  border-top: 1px solid #dadde1;
+  box-sizing: border-box;
+  padding: 16px;
+  position: relative;
+  width: 432px;
+  height: fit-content;
+  /* display: grid; */
+  /* grid-area: 3/3; */
+}
 .text-body {
   padding-right:8px;
 }
 
 .header {
   display: flex;
-  justify-content: space-around;
+  align-content: flex-start;
 }
- img {
-max-width: fit-content;
- } 
-
+ 
 a:link {
-  color: white;
+  /* color: white; */
   background-color:transparent;
   text-decoration:none;
 }
 
 .title {
   display: flex;
-  cursor:pointer;
   justify-content: flex-start;
   font-size: small;
   text-align: center;
-  color:aliceblue;
+  color:black;
   padding-right:8px;
+  padding-left: 7px;
 }
 
-  
+
+img {
+  padding: 5%;
+  border-radius: 30px;
+  margin-bottom: 10px;
+}
 /* 
-  .card-body{
+@media (min-width: 640px){
+    padding: 20px 24px;
+}   */
+
+  /* .card-comment{
     display:block;
-    background:linear-gradient(transparent 150px, rgba(173, 167, 167, 0.928));
-    color: white;
+    background-color:rgba(221, 58, 58, 0.928);
+    color: black;
     max-height: 30px;
     visibility: visible;
-    opacity: .5;
+    display: grid;
+    grid-area: 3/2 / 3 / 4;
+    /* opacity: .5; */
     
-  } */
-/* 
+  
+ 
   .text-muted {
-    text-align: right;
+    font-size: 8px;
+    padding-top: 7px;
+   
   }
    
+.submit-button {
+  /* background: none; */
+    background-color:#0079d3;
+    border: none;
+    border-radius: 6px;
+    margin-top: 17px;
+    margin-bottom: 10px;
+    /* box-shadow: none; */
+    color: #fff;
+    font-size: 18px;
+    /* font-weight: 600; */
+    height: 36px;
+    /* overflow: hidden; */
+    padding: 0 32px;
+    /* text-shadow: none; */
+}
 
-  .fade {
-    -webkit-mask-image: linear-gradient(180deg, #000 60%, transparent);
-  } */ 
-
+/* 
+font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+    margin-top: 4px;
+    max-height: 1000px;
+    opacity: 1;
+    color: #ea0027;
+    transition: all .2s ease-in-out; */
