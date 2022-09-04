@@ -22,7 +22,7 @@ router.post("/", async (req, res) => {
     const createdPost = req.body;
     // post.push(createdPost);
     try {
-      const newPost = await db.Post.create(createdPost);
+      const newPost = await db.ThPost.create(createdPost);
   
       // console.log(newPost);
   
@@ -36,8 +36,8 @@ router.post("/", async (req, res) => {
 //show route
   router.get("/:id", async (req, res) => {
     try {
-      const foundPost = await db.Post.findById(req.params.id);
-      const foundComment = await db.Comment.find({
+      const foundPost = await db.ThPost.findById(req.params.id);
+      const foundComment = await db.ThComment.find({
         post: req.params.id,
       }).populate("user").exec() ;
       console.log(foundComment)
@@ -55,7 +55,7 @@ router.post("/", async (req, res) => {
 // index route - homepage
 router.get("/", async (req, res) => {
     try {
-      const allPost = await db.Post.find();
+      const allPost = await db.ThPost.find();
       const context = { post: allPost };
       
       res.render("index.ejs", context);
@@ -68,11 +68,11 @@ router.get("/", async (req, res) => {
   //delete route
   router.delete("/:id", async (req, res) => {
     try {
-      const foundPost = await db.Post.findByIdAndDelete(
+      const foundPost = await db.ThPost.findByIdAndDelete(
         req.params.id
       );
       // delete any reviews where the review's product matches the resource to delete
-      const foundComment = await db.Comment.deleteMany({
+      const foundComment = await Th.deleteMany({
         product: req.params.id,
       });
       // console.log(foundPost,foundComment)
@@ -88,7 +88,7 @@ router.get("/", async (req, res) => {
 router.get("/:id/edit", async (req, res) => {
   
     try {
-      const foundPost = await db.Post.findById(req.params.id);
+      const foundPost = await db.ThPost.findById(req.params.id);
       // console.log(foundPost)
       res.render("edit.ejs", { post: foundPost, id: foundPost._id });
     } catch (err) {
@@ -101,7 +101,7 @@ router.get("/:id/edit", async (req, res) => {
 router.put("/:id", async (req, res) => {
   try {
     const updatedPost = req.body;
-    await db.Post.findByIdAndUpdate(req.params.id, updatedPost, {
+    await db.ThPost.findByIdAndUpdate(req.params.id, updatedPost, {
       new: true,
     });
 
