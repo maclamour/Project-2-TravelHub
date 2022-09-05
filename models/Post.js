@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
-const Posts = require('./travelhub_model');
+// const Posts = require('./travelHub_model');
 
-const postSchema = new mongoose.Schema({
+const PostSchema = new mongoose.Schema({
     title: String,
     subject: {type: String, default: null},
     body: String,
@@ -14,7 +14,7 @@ const postSchema = new mongoose.Schema({
 
 );
 
-const Post = mongoose.model('Post',postSchema);
+const Post = mongoose.model('Post',PostSchema);
 
 module.exports = Post;
 

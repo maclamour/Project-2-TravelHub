@@ -2,18 +2,20 @@ const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcryptjs");
 const { User } = require("../models");
-const auth = require("./auth_controllers")
+// const auth = require("./authcontrollers")
 
 //MIDDLEWARE
 router.use(express.json());
 router.use(express.urlencoded({ extended: false }));
 
 // MODELS IMPORT
-const db = require("../models");
+// const db = require("../models");
 
 router.get("/login", function (req, res) {
     res.render("auth/login");
   });
+
+  //test
 
 
 router.get("/register", function (req, res) {

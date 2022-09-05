@@ -1,24 +1,33 @@
 //importing statements
 const express = require('express') 
-const methodOverride = require('method-override');
 const session = require("express-session");
 /* SECTION External modules */
 const MongoStore = require("connect-mongo");
-
-
-
-
-const app = express()
-const PORT = 3000
-app.set('view engine', 'ejs')
-require("./config/db.connection");
+require('dotenv').config();
 
 
 //CONTROLLER IMPORTS
+<<<<<<< HEAD
 const travelHubController = require('./controller/travelHub_controllers.js');
 const commentController = require('./controller/comments_controllers.js')
 const authController = require('./controller/auth_controllers.js')
 // const navLinks = require('./navLinks');
+=======
+const commentController = require('./controller/comments_controllers.js')
+const authController = require('./controller/auth_controllers.js')
+const travelHubController = require("./controller/travelHub_controllers");
+
+
+const app = express()
+const PORT = process.env.PORT || 4000
+app.set('view engine', 'ejs')
+// require("./config/db.connection");
+// require('./models')
+
+const methodOverride = require('method-override');
+
+
+>>>>>>> adf787fab75942c2a095adc14d4523995e47bba7
 
 
 /* SECTION App Config */
@@ -76,11 +85,12 @@ app.get('/*',(req,res)=>{
 })
 
 
-
 // Post.insertMany(Posts,(err, Posts)=>{
 //     if (err){ console.log(err)}
 //     console.log("added provided  data", Posts)
 //     // mongoose.connection.close();
 // });
 
-app.listen(process.env.PORT || 4000);
+app.listen(PORT);
+
+
