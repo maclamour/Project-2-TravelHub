@@ -1,8 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
 
 <body>
-    <div class="comment-form">
+<section>
+    <div class="container d-flex align-content-start flex-wrap"
+        style="width: 500px; background-color: rgba(182, 160, 198, 0.349)" ;>
+        <div class="col-4">
+            <div class="card">
+                <div class="card-body">
                     <form action="/comment/<%=postId%> " method="POST">
                         <label for="content"></label>
                         <textarea class="form-control" type="text" name="content" rows="3"
@@ -13,5 +16,9 @@
                         <button>Submit Comment</button>
                     </form>
                 </div>
+            </div>
+        </div>
+    </div>
+</section>
 </body>
 </html>
