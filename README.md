@@ -79,3 +79,34 @@ Show(will have the post and we’ll as new comment and posted comments)
 Edit-main 
 Edit-comment 
 Stuff to figure out who does CSS?
+
+
+
+
+group:
+strengths:
+-great communication 
+-good initial planning  - set us up well
+-delegation of tasks and timeline management (knew what we could cover realistically)
+
+
+weaknesses:
+
+☐ What was your biggest challenge?
+deploying to heroku because of our filenames. 
+comments schema because we had to tie it to the user and posts
+how to correctly include partials in views
+should have investigated our class resources a bit more vs googling
+tiime management: spent too much time on certain tasks before asking for help
+
+
+
+☐ What are your key learnings/takeaways?
+- layering a website. If we had to do it all over again, we would have started with user schema and then worked our way to posts, comments and communities. 
+- filepath and structuring/planning the website layers and how those work together
+- CSS.  We needed a little more experience with it because it took more time than we would have liked to spend on it, especially working more with hierachy. 
+
+☐ improvements
+- add communities
+- nav/buttons before user login and  when user is logged in i.e. the only  things that would show on the nav bar after login are create post and logout. These would possibly be added to our user schema 
+- multiple users interacting with eachother on the website 
