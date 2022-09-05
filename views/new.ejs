@@ -1,12 +1,13 @@
 
 <%-include('partials/nav.ejs')%>
-<body>
+<section>
     
-    <h1>Create a post</h1>
-
+    
+<div class="page-container">
+    
     <div class="new-post-container">
-       <form action="/travelhub" method="POST">
-        <div class="form-container"></div>
+        <h3>Create a post</h3>
+        <form action="/travelhub" method="POST">
         <ul>
            <li> <label for="title"></label><input type="text" name="title" placeholder="title" id="title"/> </li>
            <li><label for="subject"></label><input type="text" name="subject" placeholder="subject" id="subject"/></li>
@@ -14,9 +15,9 @@
             <li><label for="image"></label><input type="text" name="image" placeholder="image" id="image"/></li>
             <button>Submit</button>
         </ul>
+    </form>
     </div>
-       </form>
-      </div>
-</body>
+</div>
+</section>
 
 </html>

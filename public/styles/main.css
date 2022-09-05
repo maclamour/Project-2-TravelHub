@@ -8,21 +8,46 @@ body {
   grid-column-gap: 1em;
 
 }
+.page-container{
+  width: 100%;
+  min-height: 100vh;
+  background-color: ghostwhite;
+  margin-block: 15% 20%;
+  writing-mode: horizontal-tb;
+  border: 5px solid black;
+  display: grid;
+  place-items: center;
+}
+.edit-post, new-post-container {
+background:beige;
+max-width: 600px;
+}
+.new-comment-posted{
+background:beige;
+margin-top: 50px;
+max-width: 600px;
+}
+.buttons {
+  display: inline-block;
+}
+.new-comments {
 
-.section{
-  margin-top:100px;
+max-width: 600px;
 }
-.form-container {
-  background-color:#5596d6;
-  font-family: 'IBM Plex Sans', sans-serif;
-  width: 20px;
-  height: 20px;
-  
+.comments-posted {
+  width:200px;
+  height:200px;
+  background-color: red;
 }
+
 ul {
   list-style: none;
 }
-.post-div, card-comment{
+.card {
+  max-width: 600px;
+  margin-bottom: 10%;
+}
+.post-div, card-comment, comment-form{
   
   background-color: azure; 
   border-radius: 25px;

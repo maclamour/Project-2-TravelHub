@@ -1,3 +1,17 @@
+
+<h1 align="center">We are TravelHub</h1>
+<h3 align="center">General Assembly students</h3>
+
+<p align="left"> <img src="https://komarev.com/ghpvc/?username=faizamahmoud&label=Profile%20views&color=0e75b6&style=flat" alt="faizamahmoud" /> </p>
+
+<h3 align="left">Connect with me:</h3>
+<p align="left">
+</p>
+
+<h3 align="left">Languages and Tools:</h3>
+<p align="left"> <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/> </a> <a href="https://expressjs.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original-wordmark.svg" alt="express" width="40" height="40"/> </a> <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> </a> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a> <a href="https://www.mongodb.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg" alt="mongodb" width="40" height="40"/> </a> <a href="https://nodejs.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="40" height="40"/> </a> </p>
+
+
 # Project-2-TravelHub
 
 MVP & User Flow:
@@ -65,3 +79,34 @@ Show(will have the post and we’ll as new comment and posted comments)
 Edit-main 
 Edit-comment 
 Stuff to figure out who does CSS?
+
+
+
+
+group:
+strengths:
+-great communication 
+-good initial planning  - set us up well
+-delegation of tasks and timeline management (knew what we could cover realistically)
+
+
+weaknesses:
+
+☐ What was your biggest challenge?
+deploying to heroku because of our filenames. 
+comments schema because we had to tie it to the user and posts
+how to correctly include partials in views
+should have investigated our class resources a bit more vs googling
+tiime management: spent too much time on certain tasks before asking for help
+
+
+
+☐ What are your key learnings/takeaways?
+- layering a website. If we had to do it all over again, we would have started with user schema and then worked our way to posts, comments and communities. 
+- filepath and structuring/planning the website layers and how those work together
+- CSS.  We needed a little more experience with it because it took more time than we would have liked to spend on it, especially working more with hierachy. 
+
+☐ improvements
+- add communities
+- nav/buttons before user login and  when user is logged in i.e. the only  things that would show on the nav bar after login are create post and logout. These would possibly be added to our user schema 
+- multiple users interacting with eachother on the website 
