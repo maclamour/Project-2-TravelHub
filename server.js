@@ -7,12 +7,6 @@ require('dotenv').config();
 
 
 //CONTROLLER IMPORTS
-<<<<<<< HEAD
-const travelHubController = require('./controller/travelHub_controllers.js');
-const commentController = require('./controller/comments_controllers.js')
-const authController = require('./controller/auth_controllers.js')
-// const navLinks = require('./navLinks');
-=======
 const commentController = require('./controller/comments_controllers.js')
 const authController = require('./controller/auth_controllers.js')
 const travelHubController = require("./controller/travelHub_controllers");
@@ -27,7 +21,6 @@ app.set('view engine', 'ejs')
 const methodOverride = require('method-override');
 
 
->>>>>>> adf787fab75942c2a095adc14d4523995e47bba7
 
 
 /* SECTION App Config */
