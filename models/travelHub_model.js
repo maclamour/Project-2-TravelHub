@@ -1,4 +1,6 @@
 
+const Post = require('./Post');
+
 
 const Posts = [
     {
@@ -60,5 +62,6 @@ const Posts = [
 
 
 ];
+
 
 module.exports = Posts

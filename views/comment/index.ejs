@@ -8,10 +8,9 @@
                     <div class="content">
                       
                       <small> <%= new Date(comment.createdAt).toLocaleString() %> </small>
-                      <br />
+                      
 
                 <main class="container">
-                <!-- for-loop for comments-->
                 <ul>
                     <% for(let i=0; i<comments.length; i++){ %>
                         <% let singleComment=comments[i]; %>

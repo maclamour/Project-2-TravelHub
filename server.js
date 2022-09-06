@@ -6,6 +6,7 @@ const MongoStore = require("connect-mongo");
 require('dotenv').config();
 
 
+
 //CONTROLLER IMPORTS
 const commentController = require('./controller/comments_controllers.js')
 const authController = require('./controller/auth_controllers.js')
@@ -15,8 +16,6 @@ const travelHubController = require("./controller/travelHub_controllers");
 const app = express()
 const PORT = process.env.PORT || 4000
 app.set('view engine', 'ejs')
-// require("./config/db.connection");
-// require('./models')
 
 const methodOverride = require('method-override');
 
@@ -43,7 +42,7 @@ app.use(
     
 );
 
-// console.log(session);
+
 
 /* SECTION Middleware */
 app.use(function (req, res, next) {
@@ -76,13 +75,6 @@ app.use("/", authController);
 app.get('/*',(req,res)=>{
     res.render('404')
 })
-
-
-// Post.insertMany(Posts,(err, Posts)=>{
-//     if (err){ console.log(err)}
-//     console.log("added provided  data", Posts)
-//     // mongoose.connection.close();
-// });
 
 app.listen(PORT);
 

@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- head -->
+
 
 <%-include('partials/nav.ejs')%>
 
 <body>
+    <div class="index-body">
     <section class="section">
         <div class="container-grid ">
             <% post.forEach(post=> { %>
                 <div class="post-div">
                     <div class="header">
                     <h8 class="title"> t/SummerTravel</h8>
-                    <small class="text-muted">
+                    <h8 class="text-muted">
                         <%= post.date.toDateString() %>
-                    </small>
+                    </h8>
                 </div>
-                    <img class="card-img-bottom img-fluid" src="<%=post.image %>">
-                    <a href="/travelhub/<%= post._id %>">
+                <div class="img">
+                    <img src="<%=post.image %>">
+                    <div class="a"><a href="/travelhub/<%= post._id %>">
                         <%= post.title %>
-                    </a>
+                    </a></div>
+                </div>
                     <div class="card-body">
                         <p class="text-body">
                             <%= post.body %>
@@ -33,6 +36,7 @@
         </div>
 
     </section>
+</div>
 </body>
 
 </html>
