@@ -56,7 +56,7 @@ TravelHub Board : https://trello.com/b/x9TYeRLr/travelhub
 
 ☐ Breakdown of Responsibilities:
 Alyssa - responsible for the server, database and controller/routing:
-Mack - responsible for the models, users authentication and registration:
+Mackenzie - responsible for the models, users authentication and registration:
 Faiza - responsible for the views and the CSS
 
 ☐ Strengths:
@@ -101,4 +101,3 @@ The Authentication was a stretch goal we where very proud to reach. Here is alit
     }
   });
   
-  ```

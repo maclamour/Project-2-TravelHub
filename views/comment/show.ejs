@@ -5,12 +5,12 @@
     <div class="comment-form">
                     <form action="/comment/<%=postId%> " method="POST">
                         <label for="content"></label>
-                        <textarea class="form-control" type="text" name="content" rows="3"
-                            placeholder="what are your thoughts">
+                        <textarea class="form-control mh-100" type="text" name="content" rows="3" style="background-color: rgba(0,0,255,0.1);"
+                        id="exampleFormControlTextarea1" placeholder="what are your thoughts">
                             </textarea>
                         <input type="hidden" value="<%=postId%>" name="post">
                         <input type="hidden" value="<%=user.id%>" name="user">
-                        <button>Submit Comment</button>
+                        <button class="submit-btn">Submit</button>
                     </form>
                 </div>
 </body>
