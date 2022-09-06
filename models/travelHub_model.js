@@ -1,4 +1,8 @@
 
+const Post = require('./Post');
+
+
+
 
 const Posts = [
     {

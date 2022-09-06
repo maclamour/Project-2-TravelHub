@@ -15,8 +15,6 @@ const travelHubController = require("./controller/travelHub_controllers");
 const app = express()
 const PORT = process.env.PORT || 4000
 app.set('view engine', 'ejs')
-// require("./config/db.connection");
-// require('./models')
 
 const methodOverride = require('method-override');
 
@@ -43,7 +41,7 @@ app.use(
     
 );
 
-// console.log(session);
+
 
 /* SECTION Middleware */
 app.use(function (req, res, next) {
@@ -78,11 +76,6 @@ app.get('/*',(req,res)=>{
 })
 
 
-// Post.insertMany(Posts,(err, Posts)=>{
-//     if (err){ console.log(err)}
-//     console.log("added provided  data", Posts)
-//     // mongoose.connection.close();
-// });
 
 app.listen(PORT);
 

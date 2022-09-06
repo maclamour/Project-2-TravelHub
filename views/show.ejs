@@ -3,62 +3,46 @@
 
 
 <%-include('partials/nav.ejs')%>
-<body>
-    <section class="section">
-        <div class="container-grid ">
-
+<section>
+<div class="page-container">
+    <div class="edit-post">    
+                <span>
+                    <h3><%=post.title%></h3>
+                    <p><em><%=post.subject%></em></p>
+                    <p><%=post.body%></p>
+                    <small><%=post.date.toDateString()%></small>
+                </span>
+            
+        </div>
+            <div class="buttons">
+                    
                 
-                    <div class="card-comment">
-                        <div class="card-body">
-                            <div>
-                                <div>
-                                    <h2 class="title"><%=post.title%>
-                                    </h2>
-                                    <p><%=post.subject%>
-                                    </p>
-
-                                    <p><%=post.body%>
-                                    </p>
-
-                                    <p><%=post.date.toDateString()%>
-                                    </p>
-
-                                </div>
-                                <form>
-                                    <label for="exampleFormControlTextarea1"></label>
-                                    <textarea class="form-control mh-100" style="background-color: rgba(0,0,255,0.1);"
-                                        id="exampleFormControlTextarea1" rows="3"
-                                        placeholder="edit post here"></textarea>
-                                </form>
-                                <div class="row align-items-end">
-                                    <div class="form-group col-5 col-md-5 ">
-                                        <p class="control">
-                                        <form action="/travelhub/<%= post.id %>?_method=DELETE" method="POST">
-                                            <input class="btn btn-danger" type="submit" value="Delete Post" />
-                                        </form>
-                                        </p>
-                                    </div>
-                                    <div class="form-group col-5 col-md-5 ">
-                                        <button><a href="/travelhub/<%=id%>/edit">Edit Post</a></button>
-                                    </div>
-                                    <div>
-                                        <h2>Comments Section</h2>
-                                        <%comment.forEach(comments=> {%>
-                                            <div src="/travelhub/<%=comments._id%>">
-                                                <%=comments.content%>
-                                            </div>
-                                            <%})%>
-                                    </div>
-                                
+                        <button class="edit-btn-show button"><a href="/travelhub/<%=id%>/edit">Edit Post</a></button>
+                        <form action="/travelhub/<%= post.id %>?_method=DELETE" method="POST">
+                            <input class="btn-danger button" type="submit" value="Delete Post" />
+                        </form>
+                    
+            
+            </div>
+                    <div class="new-comments">
+                        <h4>Comments Section</h4>
+                        <%-include('../views/comment/show.ejs', {postId: post._id})%>
+                        <div class="new-comment-posted">
+                            <%comment.forEach(comments=> {%>
+                                <div class="card"
+                            src="/travelhub/<%=comments._id%>">
+                            
+                           <div class="comment-user"> <%=comments.user.username%></div>
+                            <p><%=comments.content%></p>
+                            
+                            
                             </div>
+                            <%})%>
                         </div>
+                    
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <%-include('../views/comment/show.ejs', {postId: post._id})%>
+                </section>
 
 </html>
 

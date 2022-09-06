@@ -28,21 +28,28 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarText">
                     <ul class="navbar-nav ms-auto">
+                        <%if(!user) { %>
                         <li class="nav-item">
                             <a href="/login" class="nav-link">Login</a>
                         </li>
                         <li class="nav-item">
+                            <a href="/register" class="nav-link">Sign up</a>
+                        </li>
+                        <%  } %> 
+                        <%if(user) { %>
+                        <li class="nav-item">
                             <a href="/travelhub/new" class="nav-link">Create Post</a>
                         </li>
-
-                        <li class="nav-item">
-                            <a href="/register" class="nav-link">User Registeration</a>
-                        </li>
                         
+                            <span class="nav-item">
+                            <a href="/logout" class="nav-link">Logout</a>
+                        </span>
+                    
+                    <%  } %> 
+                
+            
                     </ul>
-                    <span class="navbar-text">
-                        <a><a href="/logout" class="nav-link">Logout</a></a>
-                    </span>
+                    
 
             </nav>
         </div>
