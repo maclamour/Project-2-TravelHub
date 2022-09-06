@@ -80,24 +80,16 @@ o Highlight Code:
 The Authentication was a stretch goal we where very proud to reach. Here is alittle bit of code we really like writing.
 
 ```
-  router.post("/register", async function (req, res) {
-    try {
-
-      const foundUser = await User.exists({ email: req.body.email });
-      if (foundUser) {
-        return res.redirect("/login");
-      }
-      const salt = await bcrypt.genSalt(12);
-      const hash = await bcrypt.hash(req.body.password, salt);
-  
-      req.body.password = hash;
-  
-      const newUser = await User.create(req.body);
-  
-      return res.redirect("/login");
-    } catch (err) {
-      console.log(err);
-      return res.send(err);
-    }
+ app.use(function (req, res, next) {
+    res.locals.user = req.session.currentUser;
+    next();
   });
+
+  const authRequired = function (req, res, next) {
+    if (req.session.currentUser) {
+      return next();
+    }
+  
+    return res.redirect("/login");
+  };
   
