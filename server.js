@@ -6,6 +6,7 @@ const MongoStore = require("connect-mongo");
 require('dotenv').config();
 
 
+
 //CONTROLLER IMPORTS
 const commentController = require('./controller/comments_controllers.js')
 const authController = require('./controller/auth_controllers.js')
@@ -74,8 +75,6 @@ app.use("/", authController);
 app.get('/*',(req,res)=>{
     res.render('404')
 })
-
-
 
 app.listen(PORT);
 
