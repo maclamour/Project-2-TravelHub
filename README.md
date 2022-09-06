@@ -13,8 +13,8 @@ This will be a social media forum where users can post and share information wit
 Wireframes & User Flow:
 o       Home/Index
          List of Posts that shows the title, the post content and data posted
-
         You can click on the post and that will take you to the show page
+
 ![Screen Shot 2022-08-29 at 8 30 37 AM](https://user-images.githubusercontent.com/56799470/187265939-d68de01a-4c23-4de5-a56e-a03eed6d91d8.png)
 
 
@@ -32,28 +32,29 @@ o	New –
 
 
 
-oERD:
+o ERD:
 
 ![Screen Shot 2022-08-29 at 12 08 33 PM](https://user-images.githubusercontent.com/56799470/187269182-22320ddf-9822-4c7c-a508-557dc39d98bc.png)
 
 
-oMVP
-Full MEN stack 
-Restful Routing
-CRUD Posts
-CRUD Comments
+o MVP: 
+Full MEN stack,
+Restful Routing,
+CRUD Posts,
+ and CRUD Comments
 
 
-oPostMVP
-User Profile
-User Authorization
+o Post:
+MVP,
+User Profile,
+and User Authorization
 
 
 TravelHub Board : https://trello.com/b/x9TYeRLr/travelhub
 
 ☐ Breakdown of Responsibilities:
-Alyssa - responsible for the server, database and controller/routing
-Mack - responsible for the models, users authentication and registration
+Alyssa - responsible for the server, database and controller/routing:
+Mack - responsible for the models, users authentication and registration:
 Faiza - responsible for the views and the CSS
 
 ☐ Strengths:
