@@ -3,7 +3,6 @@ a {
   color:black;
 }
 
-
 .btn-danger {
   border-style: none;
   border-radius: 9px;
@@ -21,14 +20,7 @@ body {
   padding-top:10%;
 
 }
-/* 
-input {
-  width : 150px;
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  border:none;
-} */
+
 .input-edit {
   padding-left: 6px;
   height:90%;
@@ -67,7 +59,7 @@ max-width: 600px;
 .comment-user {
   font-weight: bold;
   color: darkblue;
-   padding-bottom: 10px;
+  padding-bottom: 10px;
 }
 
 
@@ -75,10 +67,6 @@ max-width: 600px;
   height:30px; 
   width: 100%; 
   border: 1px solid #ccc;
-  outline: none;
-  user-select: text;
-  white-space: pre-wrap;
-  overflow-wrap: break-word;
 }
 
 .new-comment-posted{
@@ -87,7 +75,6 @@ max-width: 600px;
 }
 .buttons {
   display: flex;
-  
 }
 .button {
   margin:3px;
@@ -154,11 +141,10 @@ ul {
   padding-left:4%;
 }
  
-
-
 .a {
   padding-left: 6%;
 }
+
 .title {
   display: flex;
   justify-content: flex-start;
@@ -168,8 +154,7 @@ ul {
   padding-left: 7px;
 }
 
-.link
- {
+.link {
   text-align: left;
   padding-left: 20px;
   margin-top: -40px
@@ -184,19 +169,18 @@ img {
 }
 
 .submit-button {
-    background-color:#0079d3;
-    border: none;
-    border-radius: 6px;
-    margin-top: 17px;
-    margin-bottom: 10px;
-    color: #fff;
-    font-size: 18px;
-    height: 36px;
-    padding: 0 32px;
+  background-color:#0079d3;
+  border: none;
+  border-radius: 6px;
+  margin-top: 17px;
+  margin-bottom: 10px;
+  color: #fff;
+  font-size: 18px;
+  height: 36px;
+  padding: 0 32px;
 }
 
 .btns {
-
   width: 20%;
   height: 50%;
   border-radius: 9px;
@@ -224,6 +208,4 @@ img {
   border-radius: 9px;
   background-color: deepskyblue;
   border-color: silver;
-  
-  
 }
