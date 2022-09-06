@@ -40,6 +40,8 @@ router.get('/:id/', async (req, res, next) => {
   }
 })
 
+
+
 // create route 
 //localhost:4000/travelhub/:id/
 router.post('/:id', async (req, res, next) => {

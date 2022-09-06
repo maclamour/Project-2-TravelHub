@@ -8,13 +8,13 @@
     
         <h4>Create a post!</h4>
         <div class="form">
-        
+    
         <form action="/travelhub" method="POST">
         <ul>
-           <li> <label for="title"></label><input type="text" name="title" placeholder="Title" id="title" style="height:30px; width: 500px; border: 1px solid #ccc;" /> </li>
-           <li><label for="subject"></label><input type="text" name="subject" placeholder="Subject" id="subject" style="height:30px; width: 500px;border: 1px solid #ccc;"/></li>
-            <li><label for="image"></label><input type="text" name="image" placeholder="URL" id="image" style="height:30px; width: 500px;border: 1px solid #ccc;"/></li>
-            <li><textarea type="text" name="body" placeholder="Whats on your mind?.." id="body" style="height:100px; width: 500px;border: 1px solid #ccc;"/></textarea></li>
+           <li> <label for="title"></label><input class="new-form" type="text" name="title" placeholder="Title" id="title"/> </li>
+           <li><label for="subject"></label><input class="new-form" type="text" name="subject" placeholder="Subject" id="subject" /></li>
+            <li><label for="image"></label><input class="new-form" type="text" name="image" placeholder="URL" id="image" /></li>
+            <li><textarea type="text" name="body" class="new-form" placeholder="Whats on your mind?.." id="post-body"></textarea></li>
             <button class="btns">Post</button>
         </ul>
     </form>

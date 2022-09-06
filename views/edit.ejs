@@ -4,12 +4,13 @@
 <body>
 
  <div class="edit-form">
+  <h4>Edit your post!</h4>
 <form action="/travelhub/<%=post._id%>?_method=PUT" method="POST">
   
   <div class="edit">
-    <label></label>
+    <label>Title:</label>
     <input
-      class="input-title"
+      class="input-edit"
       row="5"
       type="text"
       placeholder="title here"
@@ -21,9 +22,9 @@
 
 
 <div class="edit">
-  <label></label>
+  <label>Subject:</label>
     <input
-      class="input-subject"
+      class="input-edit"
       type="text"
       placeholder="subject"
       name="subject"
@@ -33,9 +34,9 @@
   
 
   <div class="edit">
-    <label></label>
+    <label>URL: </label>
       <input
-        class="input-url"
+        class="input-edit"
         type="text"
         placeholder="URL"
         name="url"
@@ -45,20 +46,20 @@
   
   
   <div class="edit">
-    <label></label>
+    <label>Body:</label>
     <textarea
-      class="input-body"
+      class="input-edit"
       rows="5" 
       cols="60"
       name="body"
       placeholder="what are you thinking?.."
-      value="<%= post.body %> "
-    ></textarea>
+      
+    ><%= post.body %></textarea>
   </div> 
 
 </form>
 
-  <input class="edit-btn" type="submit" value="Edit Post">  
+  <input class="edit-btn" type="submit" value="Submit">  
  
 </body>
 

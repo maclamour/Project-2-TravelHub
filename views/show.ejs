@@ -12,18 +12,17 @@
                     <p><%=post.body%></p>
                     <small><%=post.date.toDateString()%></small>
                 </span>
-                
-                <form>
-                    <label for="exampleFormControlTextarea1"></label>
-                    <textarea class="form-control mh-100" style="background-color: rgba(0,0,255,0.1);"
-                        id="exampleFormControlTextarea1" rows="3" placeholder="edit post here"></textarea>
-                </form>
+            
+        </div>
             <div class="buttons">
-            <button><form action="/travelhub/<%= post.id %>?_method=DELETE" method="POST">
-                        <input class="btn btn-danger" type="submit" value="Delete Post" />
-                </form></button>
-                    <button class="btn"><a href="/travelhub/<%=id%>/edit">Edit Post</a></button>
-            </div>
+                    
+                
+                        <button class="edit-btn-show button"><a href="/travelhub/<%=id%>/edit">Edit Post</a></button>
+                        <form action="/travelhub/<%= post.id %>?_method=DELETE" method="POST">
+                            <input class="btn-danger button" type="submit" value="Delete Post" />
+                        </form>
+                    
+            
             </div>
                     <div class="new-comments">
                         <h4>Comments Section</h4>
@@ -32,8 +31,10 @@
                             <%comment.forEach(comments=> {%>
                                 <div class="card"
                             src="/travelhub/<%=comments._id%>">
-                            <%=comments.date%>
-                            <%=comments.content%>
+                            
+                           <div class="comment-user"> <%=comments.user.username%></div>
+                            <p><%=comments.content%></p>
+                            
                             
                             </div>
                             <%})%>
