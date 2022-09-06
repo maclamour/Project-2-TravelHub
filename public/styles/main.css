@@ -7,24 +7,80 @@ body {
   grid-template-rows: repeat(auto-fill, 120px);
   grid-row-gap: .5em;
   grid-column-gap: 1em;
+  padding-top:10%;
 
+}
+
+
+.btns {
+
+  width: 20%;
+  height: 50%;
+  border-radius: 9px;
+  background-color: deepskyblue;
+  border-color: silver;
+  color: white;
+  border-style: none;
+} 
+ .buttons {
+  display: inline-block;
+ }
+
+.edit-btn {
+
+  width: 10%;
+  height: 26%;
+  border-style: none;
+  position: relative;
+  top: 120%;
+  border-radius: 9px;
+  background-color: deepskyblue;
+  border-color: silver;
+  color: white;
+  
+}
+
+input, textarea, select, button {
+  width : 150px;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.edit {
+  height:30px; 
+  width: 500px; 
+  border: 1px solid rgb(118, 56, 56);
+}
+.container-grid {
+  height:50%;
+  max-width: 50%;
 }
 .page-container{
   width: 100%;
   min-height: 100vh;
   background-color: ghostwhite;
-  margin-block: 15% 20%;
+  margin-block: 1% 20%;
   writing-mode: horizontal-tb;
-  border: 5px solid black;
+  border: 1px solid black;
   display: grid;
   place-items: center;
 }
-.edit-post, new-post-container {
-background:beige;
+.new-post-container {
+  width: 50%;
+  height: 50vh;
+  border-radius: 5px;
+  background-color:#e9ecef;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+  
+}
+.edit-post{
+/* background:beige; */
 max-width: 600px;
 }
 .new-comment-posted{
-background:beige;
+/* background:beige; */
 margin-top: 50px;
 max-width: 600px;
 }
@@ -32,7 +88,6 @@ max-width: 600px;
   display: inline-block;
 }
 .new-comments {
-
 max-width: 600px;
 }
 .comments-posted {
@@ -46,10 +101,14 @@ ul {
 }
 .card {
   max-width: 600px;
-  margin-bottom: 10%;
-}
-.post-div, card-comment, comment-form{
+  margin-bottom: 1%;
   
+  height: 50%;
+}
+.form {
+  height: 100vh;
+}
+.post-div{
   background-color: azure; 
   border-radius: 25px;
   padding-top:8px;
@@ -57,7 +116,7 @@ ul {
   border: 1px solid silver;
 }
 .register {
-  margin-top: 30%;
+  
   background-color: #fff;
   border-radius: 0 0 8px 8px;
   border-top: 1px solid #dadde1;
@@ -70,7 +129,7 @@ ul {
   /* grid-area: 3/3; */
 }
 .login {
-  margin-top: 30%;
+  
   background-color: #fff;
   border-radius: 0 0 8px 8px;
   border-top: 1px solid #dadde1;
@@ -89,6 +148,7 @@ ul {
 .header {
   display: flex;
   align-content: flex-start;
+  justify-content: space-around;
 }
  
 a:link {
@@ -100,13 +160,19 @@ a:link {
 .title {
   display: flex;
   justify-content: flex-start;
-  font-size: small;
   text-align: center;
   color:black;
   padding-right:8px;
   padding-left: 7px;
 }
 
+.link
+ {
+  
+  text-align: left;
+    padding-left: 20px;
+    margin-top: -40px
+}
 
 img {
   padding: 5%;
@@ -127,14 +193,7 @@ img {
     display: grid;
     grid-area: 3/2 / 3 / 4;
     /* opacity: .5; */
-    
-  
- 
-  .text-muted {
-    font-size: 8px;
-    padding-top: 7px;
-   
-  }
+
    
 .submit-button {
   /* background: none; */

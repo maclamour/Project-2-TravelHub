@@ -18,11 +18,11 @@
                     <textarea class="form-control mh-100" style="background-color: rgba(0,0,255,0.1);"
                         id="exampleFormControlTextarea1" rows="3" placeholder="edit post here"></textarea>
                 </form>
-                <div class="buttons">
-                <form action="/travelhub/<%= post.id %>?_method=DELETE" method="POST">
+            <div class="buttons">
+            <button><form action="/travelhub/<%= post.id %>?_method=DELETE" method="POST">
                         <input class="btn btn-danger" type="submit" value="Delete Post" />
-                </form>
-                        <button><a href="/travelhub/<%=id%>/edit">Edit Post</a></button>
+                </form></button>
+                    <button class="btn"><a href="/travelhub/<%=id%>/edit">Edit Post</a></button>
             </div>
             </div>
                     <div class="new-comments">
@@ -31,9 +31,11 @@
                         <div class="new-comment-posted">
                             <%comment.forEach(comments=> {%>
                                 <div class="card"
-                            <span src="/travelhub/<%=comments._id%>">
-                                <%=comments.content%>
-                            </span>
+                            src="/travelhub/<%=comments._id%>">
+                            <%=comments.date%>
+                            <%=comments.content%>
+                            
+                            </div>
                             <%})%>
                         </div>
                     

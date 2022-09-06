@@ -99,7 +99,12 @@ how to correctly include partials in views
 should have investigated our class resources a bit more vs googling
 tiime management: spent too much time on certain tasks before asking for help
 
-
+triumphs
+initial weekend planning set us up for success
+hitting MVP early in the week
+authentication 
+cohesivness with the group
+heroku deployment
 
 ☐ What are your key learnings/takeaways?
 - layering a website. If we had to do it all over again, we would have started with user schema and then worked our way to posts, comments and communities. 
