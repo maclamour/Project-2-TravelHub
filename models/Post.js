@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-// const Posts = require('./travelHub_model');
 
 const PostSchema = new mongoose.Schema({
     title: String,

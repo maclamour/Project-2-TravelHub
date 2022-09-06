@@ -71,14 +71,11 @@ router.get("/", async (req, res) => {
       const foundPost = await db.Post.findByIdAndDelete(
         req.params.id
       );
-      // delete any reviews where the review's product matches the resource to delete
       const foundComment = await db.Comment.deleteMany({
         product: req.params.id,
       });
-      // console.log(foundPost,foundComment)
       return res.redirect("/travelhub");
     } catch (err) {
-      // throw new Error(err)
       console.log(err);
       res.redirect("/404");
     }
@@ -89,10 +86,8 @@ router.get("/:id/edit", async (req, res) => {
   
     try {
       const foundPost = await db.Post.findById(req.params.id);
-      // console.log(foundPost)
       res.render("edit.ejs", { post: foundPost, id: foundPost._id });
     } catch (err) {
-      //console.log(err);
       res.redirect("/404");
     }
   });
