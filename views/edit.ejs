@@ -2,12 +2,16 @@
 <html lang="en">
     <%- include( 'partials/nav.ejs' ) %>
 <body>
+
+ <div class="edit-form">
+  <h4>Edit your post!</h4>
 <form action="/travelhub/<%=post._id%>?_method=PUT" method="POST">
   
-  <div>
-    <label>Title</label>
+  <div class="edit">
+    <label>Title:</label>
     <input
-      class="input-title"
+      class="input-edit"
+      row="5"
       type="text"
       placeholder="title here"
       name="name"
@@ -17,42 +21,50 @@
   
 
 
-<div>
-  <label>Subject</label>
+<div class="edit">
+  <label>Subject:</label>
     <input
-      class="input-subject"
+      class="input-edit"
       type="text"
       placeholder="subject"
       name="subject"
       value="<%= post.subject %>"
     />
   </div>
-</div>
-
-<div>
   
-  <div class="control">
-    <label>Body</label>
+
+  <div class="edit">
+    <label>URL: </label>
+      <input
+        class="input-edit"
+        type="text"
+        placeholder="URL"
+        name="url"
+        value="<%= post.image %>"
+      />
+    </div>
+  
+  
+  <div class="edit">
+    <label>Body:</label>
     <textarea
-      class="input-body"
+      class="input-edit"
       rows="5" 
       cols="60"
       name="body"
-      value="<%= post.body %> "
-    ></textarea>
-  </div>
-</div>
-
-    <div>
- <input type="submit" value="Edit Post">
-    </div>
-</div>
+      placeholder="what are you thinking?.."
+      
+    ><%= post.body %></textarea>
+  </div> 
 
 </form>
+
+  <input class="edit-btn" type="submit" value="Submit">  
+ 
 </body>
-<style>
 
 
-</style>
+</div> 
+
 </html>
 

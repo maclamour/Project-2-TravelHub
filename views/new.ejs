@@ -3,17 +3,19 @@
 <section>
     
     
-<div class="page-container">
-    
+<!-- <div class="page-container"> -->
     <div class="new-post-container">
-        <h3>Create a post</h3>
+    
+        <h4>Create a post!</h4>
+        <div class="form">
+    
         <form action="/travelhub" method="POST">
         <ul>
-           <li> <label for="title"></label><input type="text" name="title" placeholder="title" id="title"/> </li>
-           <li><label for="subject"></label><input type="text" name="subject" placeholder="subject" id="subject"/></li>
-            <li><label for="body"></label><input type="text" name="body" placeholder="body" id="body"/></li>
-            <li><label for="image"></label><input type="text" name="image" placeholder="image" id="image"/></li>
-            <button>Submit</button>
+           <li> <label for="title"></label><input class="new-form" type="text" name="title" placeholder="Title" id="title"/> </li>
+           <li><label for="subject"></label><input class="new-form" type="text" name="subject" placeholder="Subject" id="subject" /></li>
+            <li><label for="image"></label><input class="new-form" type="text" name="image" placeholder="URL" id="image" /></li>
+            <li><textarea type="text" name="body" class="new-form" placeholder="Whats on your mind?.." id="post-body"></textarea></li>
+            <button class="btns">Post</button>
         </ul>
     </form>
     </div>

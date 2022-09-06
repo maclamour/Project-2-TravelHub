@@ -11,6 +11,8 @@ This will be a social media forum where users can post and share information wit
 
 
 Wireframes & User Flow:
+
+
 o       Home/Index
          List of Posts that shows the title, the post content and data posted
         You can click on the post and that will take you to the show page
@@ -54,7 +56,7 @@ TravelHub Board : https://trello.com/b/x9TYeRLr/travelhub
 
 ☐ Breakdown of Responsibilities:
 Alyssa - responsible for the server, database and controller/routing:
-Mack - responsible for the models, users authentication and registration:
+Mackenzie - responsible for the models, users authentication and registration:
 Faiza - responsible for the views and the CSS
 
 ☐ Strengths:
@@ -77,26 +79,15 @@ Our group definitely wants to add a communities feature to this project.
 o Highlight Code:
 The Authentication was a stretch goal we where very proud to reach. Here is alittle bit of code we really like writing.
 
-```
-  router.post("/register", async function (req, res) {
-    try {
-
-      const foundUser = await User.exists({ email: req.body.email });
-      if (foundUser) {
-        return res.redirect("/login");
-      }
-      const salt = await bcrypt.genSalt(12);
-      const hash = await bcrypt.hash(req.body.password, salt);
-  
-      req.body.password = hash;
-  
-      const newUser = await User.create(req.body);
-  
-      return res.redirect("/login");
-    } catch (err) {
-      console.log(err);
-      return res.send(err);
-    }
-  });
 
   ```
+
+  const authRequired = function (req, res, next) {
+    if (req.session.currentUser) {
+      return next();
+    }
+  
+    return res.redirect("/login");
+  };
+```  
+
