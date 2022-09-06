@@ -2,8 +2,6 @@
 const Post = require('./Post');
 
 
-
-
 const Posts = [
     {
         title: "What Are Some Places You Would Love To Travel To!",
@@ -64,5 +62,6 @@ const Posts = [
 
 
 ];
+
 
 module.exports = Posts
