@@ -73,7 +73,7 @@ Our biggest challanges during this project would be implementing comments into t
 Key takeaways from this project would be structuring and planning of the website, including the filename/paths and the layers of the website are better done early in the project. During the project we learned a great deal about building a web application from the frontend, particularly CSS, and a great deal about backend and how these two disciplines work together. 
 
 ☐ Improvements:
-Our group definitely wants to add a communities feature to this project, as well as, changing the navigation bar to hide the user registration and login after a user is logged into the website. 
+Our group definitely wants to add a communities feature to this project, as well as, continuing to work on CSS.
 
 
 o Highlight Code:
