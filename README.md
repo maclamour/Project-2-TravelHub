@@ -11,6 +11,8 @@ This will be a social media forum where users can post and share information wit
 
 
 Wireframes & User Flow:
+
+
 o       Home/Index
          List of Posts that shows the title, the post content and data posted
         You can click on the post and that will take you to the show page
