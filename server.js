@@ -22,7 +22,7 @@ const methodOverride = require('method-override');
 
 
 
-/* SECTION App Config */
+/* App Config */
 // app.use(navLinks);
 app.use(
     session({
